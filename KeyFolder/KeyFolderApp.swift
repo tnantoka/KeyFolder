@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct KeyFolderApp: App {
     @Environment(\.scenePhase) private var scenePhase
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     @State private var isLock = false
 

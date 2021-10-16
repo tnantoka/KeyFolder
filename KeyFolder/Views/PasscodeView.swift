@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PasscodeView: View {
     enum Mode {
-        case unlock, change
+        case unlock, change, initial
     }
     
     private let mode = Mode.unlock
@@ -30,7 +30,7 @@ struct PasscodeView: View {
             .padding(.horizontal)
             .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(
-                leading: mode == .unlock ? nil : Button(action: {}) {
+                leading: mode != .change ? nil : Button(action: {}) {
                     Image(systemName: "xmark")
                 },
                 trailing: Button(action: {
@@ -52,6 +52,8 @@ struct PasscodeView: View {
             return "Unlock"
         case .change:
             return "Change"
+        case .initial:
+            return "Set"
         }
     }
 }

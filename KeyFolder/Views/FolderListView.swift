@@ -8,19 +8,39 @@
 import SwiftUI
 
 struct FolderListView: View {
-    let folders = [
-        Folder(name: "example"),
-        Folder(name: "test")
-    ]
+    @State private var folders: [Folder] = []
+    
     var body: some View {
         List(folders, id: \.name) { folder in
             NavigationLink {
-                EntryListView()
+                EntryListView(folder: folder)
             } label: {
-                Text(folder.name)
+                HStack {
+                    Image(systemName: "folder")
+                    Text(folder.name)
+                }
             }
         }
+        .listStyle(PlainListStyle())
         .navigationBarTitle("Folders", displayMode: .inline)
+        .navigationBarItems(
+            leading: Button(action: {}) {
+                Image(systemName: "ellipsis")
+            },
+            trailing: HStack {
+                Button(action: {}) {
+                Image(systemName: "plus")
+                }
+                Button(action: {}) {
+                Image(systemName: "pencil")
+                }
+                Button(action: {}) {
+                Image(systemName: "trash")
+                }
+            })
+        .onAppear {
+            folders = Folder.all()
+        }
     }
 }
 

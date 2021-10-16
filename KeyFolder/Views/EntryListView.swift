@@ -8,13 +8,42 @@
 import SwiftUI
 
 struct EntryListView: View {
+    @State private var entries: [Entry] = []
+    
+    let folder: Folder
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(entries, id: \.name) { entry in
+            Button {
+
+            } label: {
+                Text(entry.name)
+            }
+        }
+        .listStyle(PlainListStyle())
+        .navigationBarTitle("Entries", displayMode: .inline)
+        .navigationBarItems(
+            trailing: HStack {
+                Button(action: {}) {
+                Image(systemName: "plus")
+                }
+                Button(action: {}) {
+                Image(systemName: "pencil")
+                }
+                Button(action: {}) {
+                Image(systemName: "trash")
+                }
+            })
+        .onAppear {
+            entries = Entry.all(for: folder)
+        }
     }
 }
 
 struct EntryListView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryListView()
+        NavigationView {
+            EntryListView(folder: Folder(name: "example"))
+        }
     }
 }

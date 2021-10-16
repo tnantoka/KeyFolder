@@ -8,6 +8,7 @@
 import Foundation
 
 struct Folder {
+    let id = UUID().uuidString
     let name: String
     
     static func all() -> [Folder] {

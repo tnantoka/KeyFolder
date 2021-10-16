@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct EntryListView: View {
-    @State private var entries: [Entry] = []
-    
+    @EnvironmentObject private var store: Store
+
     let folder: Folder
 
     var body: some View {
-        List(entries, id: \.name) { entry in
+        List(store.entries.filter { entry in
+            entry.folderId == folder.id
+        }, id: \.id) { entry in
             Button {
 
             } label: {
@@ -41,9 +43,6 @@ struct EntryListView: View {
                 Image(systemName: "trash")
                 }
             })
-        .onAppear {
-            entries = Entry.all(for: folder)
-        }
     }
 }
 

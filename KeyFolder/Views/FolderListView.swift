@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FolderListView: View {
-    @State private var folders: [Folder] = []
-    
+    @EnvironmentObject private var store: Store
+
     var body: some View {
-        List(folders, id: \.name) { folder in
+        List(store.folders, id: \.id) { folder in
             NavigationLink {
                 EntryListView(folder: folder)
             } label: {
@@ -38,9 +38,6 @@ struct FolderListView: View {
                 Image(systemName: "trash")
                 }
             })
-        .onAppear {
-            folders = Folder.all()
-        }
     }
 }
 

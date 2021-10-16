@@ -25,6 +25,7 @@ struct KeyFolderApp: App {
             .fullScreenCover(isPresented: $isLock) {
                 PasscodeView(isLocked: $isLock)
             }
+            .environmentObject(Store())
         }
     }
 }

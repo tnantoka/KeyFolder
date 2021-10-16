@@ -17,7 +17,14 @@ struct EntryListView: View {
             Button {
 
             } label: {
-                Text(entry.name)
+                HStack {
+                    if (entry.isMovie) {
+                        Image(systemName: "play.rectangle")
+                    } else {
+                        Image(systemName: "photo")
+                    }
+                    Text(entry.name)
+                }
             }
         }
         .listStyle(PlainListStyle())

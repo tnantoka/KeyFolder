@@ -10,6 +10,10 @@ import Foundation
 struct Entry {
     let name: String
     
+    var isMovie: Bool {
+        return name.hasSuffix(".mp4")
+    }
+    
     static func all(for folder: Folder) -> [Entry] {
         if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let folderURL = documentsURL.appendingPathComponent("folders").appendingPathComponent(folder.name)

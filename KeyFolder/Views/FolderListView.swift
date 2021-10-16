@@ -9,6 +9,9 @@ import SwiftUI
 
 struct FolderListView: View {
     @EnvironmentObject private var store: Store
+    @State private var isShowingMenu: Bool = false
+    @State private var isEditing: Bool = false
+    @State private var isDeleting: Bool = false
 
     var body: some View {
         List(store.folders, id: \.id) { folder in
@@ -34,7 +37,9 @@ struct FolderListView: View {
         .listStyle(PlainListStyle())
         .navigationBarTitle("Folders", displayMode: .inline)
         .navigationBarItems(
-            leading: Button(action: {}) {
+            leading: Button(action: {
+                isShowingMenu = true
+            }) {
                 Image(systemName: "ellipsis")
             },
             trailing: HStack {
@@ -43,14 +48,33 @@ struct FolderListView: View {
                     Image(systemName: "plus")
                     }
                 } else {
-                    Button(action: {}) {
+                    Button(action: {
+                        isEditing = true
+                    }) {
                     Image(systemName: "pencil")
                     }
-                    Button(action: {}) {
+                    Button(action: {
+                        isDeleting = true
+                    }) {
                     Image(systemName: "trash")
                     }
                 }
             })
+        .actionSheet(isPresented: $isShowingMenu) {
+            ActionSheet(title: Text("Menu"), buttons: [
+                .default(Text("Change passcode")) {
+                },
+                .default(Text("Info")) {
+                },
+                .cancel(Text("Cancel"))
+            ])
+        }
+        .alert(isPresented: $isDeleting) {
+            Alert(title: Text("Delete"), primaryButton: .destructive(Text("Delete")) {}, secondaryButton: .cancel(Text("Cancel")))
+        }
+        .fullScreenCover(isPresented: $isEditing) {
+            FolderFormView(mode: .edit, name: store.folders.first { folder in folder.isSelected }?.name ?? "", isShowing: $isEditing)
+        }
     }
 }
 

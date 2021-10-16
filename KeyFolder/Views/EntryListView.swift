@@ -13,18 +13,29 @@ struct EntryListView: View {
     let folder: Folder
 
     var body: some View {
-        List(store.entries.filter { entry in
+        let entries = store.entries.filter { entry in
             entry.folderId == folder.id
-        }, id: \.id) { entry in
+        }
+        List(entries, id: \.id) { entry in
             Button {
 
             } label: {
                 HStack {
-                    if (entry.isMovie) {
-                        Image(systemName: "play.rectangle")
-                    } else {
-                        Image(systemName: "photo")
+                    Button {
+                        store.select(entry: entry, isSelected: !entry.isSelected)
+                    } label: {
+                        if (entry.isSelected) {
+                            Image(systemName: "checkmark.circle")
+                        } else {
+                            if (entry.isMovie) {
+                                Image(systemName: "play.rectangle")
+                            } else {
+                                Image(systemName: "photo")
+                            }
+                        }
                     }
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(width: 32)
                     Text(entry.name)
                 }
             }
@@ -33,14 +44,17 @@ struct EntryListView: View {
         .navigationBarTitle("Entries", displayMode: .inline)
         .navigationBarItems(
             trailing: HStack {
-                Button(action: {}) {
-                Image(systemName: "plus")
-                }
-                Button(action: {}) {
-                Image(systemName: "pencil")
-                }
-                Button(action: {}) {
-                Image(systemName: "trash")
+                if entries.first { folder in folder.isSelected } == nil {
+                    Button(action: {}) {
+                    Image(systemName: "plus")
+                    }
+                } else {
+                    Button(action: {}) {
+                    Image(systemName: "pencil")
+                    }
+                    Button(action: {}) {
+                    Image(systemName: "trash")
+                    }
                 }
             })
     }

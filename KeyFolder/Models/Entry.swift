@@ -8,13 +8,26 @@
 import Foundation
 
 struct Entry {
-    let id = UUID().uuidString
+    let id: String
     let name: String
     let folderId: String
-    
+    let isSelected: Bool
+
     var isMovie: Bool {
         return name.hasSuffix(".mp4")
     }
+    
+    init(name: String, folderId: String) {
+        self.init(id: UUID().uuidString, name: name, folderId: folderId, isSelected: false)
+    }
+
+    init(id: String, name: String, folderId: String, isSelected: Bool) {
+        self.id = id
+        self.name = name
+        self.folderId = folderId
+        self.isSelected = isSelected
+    }
+
     
     static func all(for folder: Folder) -> [Entry] {
         if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {

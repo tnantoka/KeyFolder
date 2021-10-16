@@ -16,7 +16,17 @@ struct FolderListView: View {
                 EntryListView(folder: folder)
             } label: {
                 HStack {
-                    Image(systemName: "folder")
+                    Button {
+                        store.select(folder: folder, isSelected: !folder.isSelected)
+                    } label: {
+                        if (folder.isSelected) {
+                            Image(systemName: "checkmark.circle")
+                        } else {
+                            Image(systemName: "folder")
+                        }
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .frame(width: 32)
                     Text(folder.name)
                 }
             }
@@ -28,14 +38,17 @@ struct FolderListView: View {
                 Image(systemName: "ellipsis")
             },
             trailing: HStack {
-                Button(action: {}) {
-                Image(systemName: "plus")
-                }
-                Button(action: {}) {
-                Image(systemName: "pencil")
-                }
-                Button(action: {}) {
-                Image(systemName: "trash")
+                if store.folders.first { folder in folder.isSelected } == nil {
+                    Button(action: {}) {
+                    Image(systemName: "plus")
+                    }
+                } else {
+                    Button(action: {}) {
+                    Image(systemName: "pencil")
+                    }
+                    Button(action: {}) {
+                    Image(systemName: "trash")
+                    }
                 }
             })
     }

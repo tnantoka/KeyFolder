@@ -17,5 +17,18 @@ class Store: ObservableObject {
             Entry.all(for: folder)
         })
         print(entries)
-    }    
+    }
+    
+    func select(folder: Folder, isSelected: Bool) {
+        self.folders = folders.map { f in
+            Folder(id: f.id, name: f.name, isSelected: f.id == folder.id ? isSelected : false)
+        }
+    }
+    
+    func select(entry: Entry, isSelected: Bool) {
+        self.entries = entries.map { e in
+            Entry(id: e.id, name: e.name, folderId: e.folderId, isSelected: e.id == entry.id ? isSelected : false)
+        }
+
+    }
 }

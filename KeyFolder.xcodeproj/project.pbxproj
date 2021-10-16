@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		9BD06731271A9AB900325F4F /* KeyFolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06730271A9AB900325F4F /* KeyFolderApp.swift */; };
-		9BD06733271A9AB900325F4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06732271A9AB900325F4F /* ContentView.swift */; };
 		9BD06735271A9ABA00325F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD06734271A9ABA00325F4F /* Assets.xcassets */; };
 		9BD06738271A9ABA00325F4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD06737271A9ABA00325F4F /* Preview Assets.xcassets */; };
 		9BD06742271A9ABA00325F4F /* KeyFolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06741271A9ABA00325F4F /* KeyFolderTests.swift */; };
 		9BD0674C271A9ABB00325F4F /* KeyFolderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD0674B271A9ABB00325F4F /* KeyFolderUITests.swift */; };
 		9BD0674E271A9ABB00325F4F /* KeyFolderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD0674D271A9ABB00325F4F /* KeyFolderUITestsLaunchTests.swift */; };
 		9BD0675C271A9AE200325F4F /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD0675B271A9AE200325F4F /* PasscodeView.swift */; };
+		9BD0675E271AA74A00325F4F /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD0675D271AA74A00325F4F /* FolderListView.swift */; };
+		9BD06761271AA78000325F4F /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06760271AA78000325F4F /* Folder.swift */; };
+		9BD06765271AAB6400325F4F /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06764271AAB6400325F4F /* Entry.swift */; };
+		9BD06767271AAB7300325F4F /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06766271AAB7300325F4F /* EntryListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		9BD0672D271A9AB900325F4F /* KeyFolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyFolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD06730271A9AB900325F4F /* KeyFolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFolderApp.swift; sourceTree = "<group>"; };
-		9BD06732271A9AB900325F4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BD06734271A9ABA00325F4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BD06737271A9ABA00325F4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BD0673D271A9ABA00325F4F /* KeyFolderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyFolderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,10 @@
 		9BD0674B271A9ABB00325F4F /* KeyFolderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFolderUITests.swift; sourceTree = "<group>"; };
 		9BD0674D271A9ABB00325F4F /* KeyFolderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFolderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9BD0675B271A9AE200325F4F /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
+		9BD0675D271AA74A00325F4F /* FolderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
+		9BD06760271AA78000325F4F /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		9BD06764271AAB6400325F4F /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		9BD06766271AAB7300325F4F /* EntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +102,9 @@
 		9BD0672F271A9AB900325F4F /* KeyFolder */ = {
 			isa = PBXGroup;
 			children = (
+				9BD0675F271AA76C00325F4F /* Models */,
 				9BD0675A271A9AD200325F4F /* Views */,
 				9BD06730271A9AB900325F4F /* KeyFolderApp.swift */,
-				9BD06732271A9AB900325F4F /* ContentView.swift */,
 				9BD06734271A9ABA00325F4F /* Assets.xcassets */,
 				9BD06736271A9ABA00325F4F /* Preview Content */,
 			);
@@ -134,8 +140,19 @@
 			isa = PBXGroup;
 			children = (
 				9BD0675B271A9AE200325F4F /* PasscodeView.swift */,
+				9BD0675D271AA74A00325F4F /* FolderListView.swift */,
+				9BD06766271AAB7300325F4F /* EntryListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9BD0675F271AA76C00325F4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9BD06760271AA78000325F4F /* Folder.swift */,
+				9BD06764271AAB6400325F4F /* Entry.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD06765271AAB6400325F4F /* Entry.swift in Sources */,
 				9BD0675C271A9AE200325F4F /* PasscodeView.swift in Sources */,
-				9BD06733271A9AB900325F4F /* ContentView.swift in Sources */,
+				9BD06761271AA78000325F4F /* Folder.swift in Sources */,
+				9BD0675E271AA74A00325F4F /* FolderListView.swift in Sources */,
 				9BD06731271A9AB900325F4F /* KeyFolderApp.swift in Sources */,
+				9BD06767271AAB7300325F4F /* EntryListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

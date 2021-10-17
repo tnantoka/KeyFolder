@@ -25,6 +25,7 @@
 		9BD06772271B178F00325F4F /* FolderFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06771271B178F00325F4F /* FolderFormView.swift */; };
 		9BD06775271B17A700325F4F /* EntryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06774271B17A700325F4F /* EntryFormView.swift */; };
 		9BD06777271B93CA00325F4F /* QuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06776271B93CA00325F4F /* QuickLookView.swift */; };
+		9BD0679A271BC63500325F4F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06799271BC63500325F4F /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9BD06771271B178F00325F4F /* FolderFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderFormView.swift; sourceTree = "<group>"; };
 		9BD06774271B17A700325F4F /* EntryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
 		9BD06776271B93CA00325F4F /* QuickLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookView.swift; sourceTree = "<group>"; };
+		9BD06799271BC63500325F4F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				9BD06771271B178F00325F4F /* FolderFormView.swift */,
 				9BD06774271B17A700325F4F /* EntryFormView.swift */,
 				9BD06776271B93CA00325F4F /* QuickLookView.swift */,
+				9BD06799271BC63500325F4F /* ImagePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				9BD06775271B17A700325F4F /* EntryFormView.swift in Sources */,
 				9BD06765271AAB6400325F4F /* Entry.swift in Sources */,
 				9BD0675C271A9AE200325F4F /* PasscodeView.swift in Sources */,
+				9BD0679A271BC63500325F4F /* ImagePickerView.swift in Sources */,
 				9BD06761271AA78000325F4F /* Folder.swift in Sources */,
 				9BD06770271AF3A000325F4F /* Store.swift in Sources */,
 				9BD06777271B93CA00325F4F /* QuickLookView.swift in Sources */,

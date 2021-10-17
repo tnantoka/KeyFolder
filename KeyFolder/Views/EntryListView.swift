@@ -11,6 +11,8 @@ struct EntryListView: View {
     @EnvironmentObject private var store: Store
     @State private var isPreviwing: Bool = false
     @State private var previwingId = ""
+    @State private var isEditing: Bool = false
+    @State private var isPicking: Bool = false
 
     let folder: Folder
 
@@ -48,11 +50,14 @@ struct EntryListView: View {
         .navigationBarItems(
             trailing: HStack {
                 if entries.first { folder in folder.isSelected } == nil {
-                    Button(action: {}) {
+                    Button(action: {                        isPicking = true
+}) {
                     Image(systemName: "plus")
                     }
                 } else {
-                    Button(action: {}) {
+                    Button(action: {
+                        isEditing = true
+                    }) {
                     Image(systemName: "pencil")
                     }
                     Button(action: {}) {
@@ -62,6 +67,14 @@ struct EntryListView: View {
             })
         .fullScreenCover(isPresented: $isPreviwing) {
             QuickLookView(entries: entries, isPresented: $isPreviwing, initialEntryId: $previwingId)
+        }
+        .sheet(isPresented: $isEditing) {
+            EntryFormView(name: entries.first { entry in entry.isSelected }?.name ?? "", isShowing: $isEditing, folders: store.folders)
+        }
+        .sheet(isPresented: $isPicking) {
+            ImagePickerView(isPresented: $isPicking) { image in
+                print(image)
+            }
         }
     }
 }

@@ -31,4 +31,16 @@ class Store: ObservableObject {
         }
 
     }
+    
+    func delete(folder: Folder) {
+        self.folders = folders.filter { f in f.id != folder.id }
+        self.entries = entries.filter { e in e.folder.id != folder.id }
+        folder.destroy()
+    }
+
+    func delete(entry: Entry) {
+        self.entries = entries.filter { e in e.id != entry.id }
+        entry.destroy()
+    }
+
 }

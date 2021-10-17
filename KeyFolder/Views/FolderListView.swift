@@ -72,7 +72,11 @@ struct FolderListView: View {
         .alert(isPresented: $isDeleting) {
             Alert(title: Text("Delete"),
                   message: Text("Are you sure?"),
-                    primaryButton: .destructive(Text("Delete")) {}, secondaryButton: .cancel(Text("Cancel")))
+                    primaryButton: .destructive(Text("Delete")) {
+                if let folder = store.folders.first(where: { folder in folder.isSelected }) {
+                    store.delete(folder: folder)
+                }
+            }, secondaryButton: .cancel(Text("Cancel")))
         }
         .sheet(isPresented: $isEditing) {
             FolderFormView(mode: .edit, name: store.folders.first { folder in folder.isSelected }?.name ?? "", isShowing: $isEditing)

@@ -32,6 +32,10 @@ struct Entry {
         return folder.url().appendingPathComponent(name)
     }
 
+    func destroy() {
+        try? FileManager.default.removeItem(at: url())
+    }
+
     static func all(for folder: Folder) -> [Entry] {
         let folderURL = folder.url()
         if FileManager.default.fileExists(atPath: folderURL.path) {

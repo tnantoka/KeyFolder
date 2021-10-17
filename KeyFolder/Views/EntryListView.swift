@@ -13,6 +13,7 @@ struct EntryListView: View {
     @State private var previwingId = ""
     @State private var isEditing: Bool = false
     @State private var isPicking: Bool = false
+    @State private var isDeleting: Bool = false
 
     let folder: Folder
 
@@ -60,7 +61,9 @@ struct EntryListView: View {
                     }) {
                     Image(systemName: "pencil")
                     }
-                    Button(action: {}) {
+                    Button(action: {
+                        isDeleting = true
+                    }) {
                     Image(systemName: "trash")
                     }
                 }
@@ -75,6 +78,15 @@ struct EntryListView: View {
             ImagePickerView(isPresented: $isPicking) { image in
                 print(image)
             }
+        }
+        .alert(isPresented: $isDeleting) {
+            Alert(title: Text("Delete"),
+                  message: Text("Are you sure?"),
+                    primaryButton: .destructive(Text("Delete")) {
+                if let entry = entries.first(where: { entry in entry.isSelected }) {
+                    store.delete(entry: entry)
+                }
+            }, secondaryButton: .cancel(Text("Cancel")))
         }
     }
 }

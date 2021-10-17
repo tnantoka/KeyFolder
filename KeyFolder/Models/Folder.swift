@@ -29,6 +29,10 @@ struct Folder {
         return URL(string: "")!
     }
     
+    func destroy() {
+        try? FileManager.default.removeItem(at: url())
+    }
+    
     static func all() -> [Folder] {
         if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let foldersURL = documentsURL.appendingPathComponent("folders")

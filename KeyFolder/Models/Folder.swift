@@ -22,6 +22,13 @@ struct Folder {
         self.isSelected = isSelected
     }
 
+    func url() -> URL {
+        if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            return documentsURL.appendingPathComponent("folders").appendingPathComponent(name)
+        }
+        return URL(string: "")!
+    }
+    
     static func all() -> [Folder] {
         if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let foldersURL = documentsURL.appendingPathComponent("folders")

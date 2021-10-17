@@ -27,7 +27,7 @@ class Store: ObservableObject {
     
     func select(entry: Entry, isSelected: Bool) {
         self.entries = entries.map { e in
-            Entry(id: e.id, name: e.name, folderId: e.folderId, isSelected: e.id == entry.id ? isSelected : false)
+            Entry(id: e.id, name: e.name, folder: e.folder, isSelected: e.id == entry.id ? isSelected : false)
         }
 
     }

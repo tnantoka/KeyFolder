@@ -72,7 +72,7 @@ struct FolderListView: View {
         .alert(isPresented: $isDeleting) {
             Alert(title: Text("Delete"), primaryButton: .destructive(Text("Delete")) {}, secondaryButton: .cancel(Text("Cancel")))
         }
-        .fullScreenCover(isPresented: $isEditing) {
+        .sheet(isPresented: $isEditing) {
             FolderFormView(mode: .edit, name: store.folders.first { folder in folder.isSelected }?.name ?? "", isShowing: $isEditing)
         }
     }

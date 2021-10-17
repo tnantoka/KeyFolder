@@ -9,16 +9,19 @@ import SwiftUI
 
 struct EntryListView: View {
     @EnvironmentObject private var store: Store
+    @State private var isPreviwing: Bool = false
+    @State private var previwingId = ""
 
     let folder: Folder
 
     var body: some View {
         let entries = store.entries.filter { entry in
-            entry.folderId == folder.id
+            entry.folder.id == folder.id
         }
         List(entries, id: \.id) { entry in
             Button {
-
+                previwingId = entry.id
+                isPreviwing = true
             } label: {
                 HStack {
                     Button {
@@ -57,6 +60,9 @@ struct EntryListView: View {
                     }
                 }
             })
+        .fullScreenCover(isPresented: $isPreviwing) {
+            QuickLookView(entries: entries, isPresented: $isPreviwing, initialEntryId: $previwingId)
+        }
     }
 }
 

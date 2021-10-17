@@ -11,7 +11,8 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
     @Binding var isPresented: Bool
 
-    let onPick: (UIImage) -> Void
+    let onPickImage: (UIImage) -> Void
+    let onPickMovie: (URL) -> Void
 
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let controller = UIImagePickerController()
@@ -40,17 +41,17 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let image = info[.originalImage] as? UIImage {
-                parent.onPick(image)
+                parent.onPickImage(image)
+            } else if let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+                parent.onPickMovie(url)
             }
             parent.isPresented = false
-
         }
     }
 }
 
 struct ImagePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickerView(isPresented: .constant(false)) { _ in
-        }
+        ImagePickerView(isPresented: .constant(false), onPickImage: { _ in }, onPickMovie: { _ in })
     }
 }

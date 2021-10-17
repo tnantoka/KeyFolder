@@ -75,9 +75,12 @@ struct EntryListView: View {
             EntryFormView(name: entries.first { entry in entry.isSelected }?.name ?? "", isShowing: $isEditing, folders: store.folders)
         }
         .sheet(isPresented: $isPicking) {
-            ImagePickerView(isPresented: $isPicking) { image in
-                print(image)
-            }
+            ImagePickerView(isPresented: $isPicking, onPickImage: { image
+                in
+                store.addEntry(folder: folder, image: image)
+            }, onPickMovie: { url in
+                store.addEntry(folder: folder, movieURL: url)
+            })
         }
         .alert(isPresented: $isDeleting) {
             Alert(title: Text("Delete"),

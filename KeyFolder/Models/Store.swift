@@ -29,7 +29,6 @@ class Store: ObservableObject {
         self.entries = entries.map { e in
             Entry(id: e.id, name: e.name, folder: e.folder, isSelected: e.id == entry.id ? isSelected : false)
         }
-
     }
     
     func delete(folder: Folder) {
@@ -42,5 +41,21 @@ class Store: ObservableObject {
         self.entries = entries.filter { e in e.id != entry.id }
         entry.destroy()
     }
-
+    
+    func addEntry(folder: Folder, image: UIImage) {
+        if let data = image.pngData() {
+            addEntry(folder: folder, data: data, name: "\(UUID().uuidString).png")
+        }
+    }
+    
+    func addEntry(folder: Folder, movieURL: URL) {
+        if let data = try? Data(contentsOf: movieURL) {
+            addEntry(folder: folder, data: data, name: "\(UUID().uuidString).mov")
+        }
+    }
+    
+    func addEntry(folder: Folder, data: Data, name: String) {
+        try? data.write(to: folder.url().appendingPathComponent(name))
+        entries.append(Entry(name: name, folder: folder))
+    }
 }

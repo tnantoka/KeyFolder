@@ -42,7 +42,7 @@ struct FolderListView: View {
             leading: Button(action: {
                 isShowingMenu = true
             }) {
-                Image(systemName: "ellipsis")
+                Image(systemName: "gearshape")
             },
             trailing: HStack {
                 if store.folders.first { folder in folder.isSelected } == nil {

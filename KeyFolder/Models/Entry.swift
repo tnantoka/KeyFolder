@@ -36,6 +36,12 @@ struct Entry {
         try? FileManager.default.removeItem(at: url())
     }
 
+    func update(name: String, folder: Folder) -> Entry {
+        let entry = Entry(id: id, name: name, folder: folder, isSelected: isSelected)
+        try? FileManager.default.moveItem(at: url(), to: entry.url())
+        return entry
+    }
+
     static func all(for folder: Folder) -> [Entry] {
         let folderURL = folder.url()
         if FileManager.default.fileExists(atPath: folderURL.path) {

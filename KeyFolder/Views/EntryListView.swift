@@ -72,7 +72,8 @@ struct EntryListView: View {
             QuickLookView(entries: entries, isPresented: $isPreviwing, initialEntryId: $previwingId)
         }
         .sheet(isPresented: $isEditing) {
-            EntryFormView(name: entries.first { entry in entry.isSelected }?.name ?? "", isShowing: $isEditing, folders: store.folders)
+            let entry = entries.first { entry in entry.isSelected }
+            EntryFormView(name: entry?.name ?? "", folderId: entry?.folder.id ?? "", isShowing: $isEditing)
         }
         .sheet(isPresented: $isPicking) {
             ImagePickerView(isPresented: $isPicking, onPickImage: { image

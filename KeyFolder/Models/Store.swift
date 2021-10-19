@@ -73,4 +73,16 @@ class Store: ObservableObject {
             }
         }
     }
+    
+    func updateEntry(name: String, folderId: String) {
+        guard let entry = entries.first(where: { e in e.isSelected }) else { return }
+        guard let folder = folders.first(where: { f in f.id == folderId }) else { return }
+        self.entries = entries.map { e in
+            if e.id == entry.id {
+                return e.update(name: name, folder: folder)
+            } else {
+                return e
+            }
+        }
+    }
 }

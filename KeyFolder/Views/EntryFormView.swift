@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct EntryFormView: View {
-    @State var name = ""
-    @State var folderIndex = 0
-    @Binding var isShowing: Bool
+    @EnvironmentObject private var store: Store
 
-    let folders: [Folder]
+    @State var name = ""
+    @State var folderId = ""
+    @Binding var isShowing: Bool
     
     var body: some View {
         NavigationView {
@@ -22,9 +22,9 @@ struct EntryFormView: View {
                         .autocapitalization(.none)
                 }
                 Section(header: Text("Folder")) {
-                    Picker(selection: $folderIndex) {
-                        ForEach(0..<folders.count) { index in
-                            Text(folders[index].name)
+                    Picker(selection: $folderId) {
+                        ForEach(store.folders, id: \.id) { folder in
+                            Text(folder.name)
                         }
                     } label: {
                         Text("Folder")
@@ -39,7 +39,9 @@ struct EntryFormView: View {
                     Image(systemName: "xmark")
                 },
                 trailing: Button(action: {
-                }) {
+                    store.updateEntry(name: name, folderId: folderId)
+                    isShowing = false
+                                    }) {
                     Image(systemName: "checkmark")
                 })
         }
@@ -48,6 +50,6 @@ struct EntryFormView: View {
 
 struct EntryFormView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryFormView(isShowing: .constant(false), folders: [])
+        EntryFormView(isShowing: .constant(false))
     }
 }

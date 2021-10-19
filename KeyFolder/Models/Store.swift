@@ -58,4 +58,19 @@ class Store: ObservableObject {
         try? data.write(to: folder.url().appendingPathComponent(name))
         entries.append(Entry(name: name, folder: folder))
     }
+    
+    func addFolder(name: String) {
+        folders.append(Folder.create(name: name))
+    }
+    
+    func updateFolder(name: String) {
+        guard let folder = folders.first(where: { f in f.isSelected }) else { return }
+        self.folders = folders.map { f in
+            if f.id == folder.id {
+                return f.update(name: name)
+            } else {
+                return f
+            }
+        }
+    }
 }

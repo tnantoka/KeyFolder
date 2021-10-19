@@ -10,6 +10,7 @@ import SwiftUI
 struct FolderListView: View {
     @EnvironmentObject private var store: Store
     @State private var isShowingMenu: Bool = false
+    @State private var isCreating: Bool = false
     @State private var isEditing: Bool = false
     @State private var isDeleting: Bool = false
     @Binding var isLocked: Bool
@@ -45,7 +46,9 @@ struct FolderListView: View {
             },
             trailing: HStack {
                 if store.folders.first { folder in folder.isSelected } == nil {
-                    Button(action: {}) {
+                    Button(action: {
+                        isCreating = true
+                    }) {
                     Image(systemName: "plus")
                     }
                 } else {
@@ -78,6 +81,9 @@ struct FolderListView: View {
                     store.delete(folder: folder)
                 }
             }, secondaryButton: .cancel(Text("Cancel")))
+        }
+        .sheet(isPresented: $isCreating) {
+            FolderFormView(mode: .new, name: "", isShowing: $isCreating)
         }
         .sheet(isPresented: $isEditing) {
             FolderFormView(mode: .edit, name: store.folders.first { folder in folder.isSelected }?.name ?? "", isShowing: $isEditing)

@@ -34,7 +34,7 @@ struct PasscodeView: View {
                     Image(systemName: "xmark")
                 },
                 trailing: Button(action: {
-                    isLocked.toggle()
+                    isLocked = false
                 }) {
                     Image(systemName: "checkmark")
                 })

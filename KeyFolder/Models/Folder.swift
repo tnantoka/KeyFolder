@@ -33,6 +33,18 @@ struct Folder {
         try? FileManager.default.removeItem(at: url())
     }
     
+    func update(name: String) -> Folder {
+        let folder = Folder(id: id, name: name, isSelected: isSelected)
+        try? FileManager.default.moveItem(at: url(), to: folder.url())
+        return folder
+    }
+    
+    static func create(name: String) -> Folder {
+        let folder = Folder(name: name)
+        try? FileManager.default.createDirectory(at: folder.url(), withIntermediateDirectories: false)
+        return folder
+    }
+    
     static func all() -> [Folder] {
         if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let foldersURL = documentsURL.appendingPathComponent("folders")

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FolderFormView: View {
+    @EnvironmentObject private var store: Store
+
     enum Mode {
         case new, edit
     }
@@ -24,17 +26,25 @@ struct FolderFormView: View {
             Form {
                 Section(header: Text("Name")) {
                     TextField("Name", text: $name)
+                        .autocapitalization(.none)
                         // .focused($isFocused)
                 }
             }
             .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(
                 leading: Button(action: {
-                    isShowing.toggle()
+                    isShowing = false
                 }) {
                     Image(systemName: "xmark")
                 },
                 trailing: Button(action: {
+                    switch mode {
+                    case .new:
+                        store.addFolder(name: name)
+                    case .edit:
+                        store.updateFolder(name: name)
+                    }
+                    isShowing = false
                 }) {
                     Image(systemName: "checkmark")
                 })

@@ -19,6 +19,7 @@ struct EntryFormView: View {
             Form {
                 Section(header: Text("Name")) {
                     TextField("Name", text: $name)
+                        .autocapitalization(.none)
                 }
                 Section(header: Text("Folder")) {
                     Picker(selection: $folderIndex) {
@@ -33,7 +34,7 @@ struct EntryFormView: View {
             .navigationBarTitle("Edit entry", displayMode: .inline)
             .navigationBarItems(
                 leading: Button(action: {
-                    isShowing.toggle()
+                    isShowing = false
                 }) {
                     Image(systemName: "xmark")
                 },

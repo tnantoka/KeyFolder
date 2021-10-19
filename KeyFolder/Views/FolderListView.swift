@@ -12,9 +12,10 @@ struct FolderListView: View {
     @State private var isShowingMenu: Bool = false
     @State private var isEditing: Bool = false
     @State private var isDeleting: Bool = false
+    @Binding var isLocked: Bool
 
     var body: some View {
-        List(store.folders, id: \.id) { folder in
+        List(isLocked ? [] : store.folders, id: \.id) { folder in
             NavigationLink {
                 EntryListView(folder: folder)
             } label: {
@@ -87,7 +88,7 @@ struct FolderListView: View {
 struct FolderListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            FolderListView()
+            FolderListView(isLocked: .constant(false))
         }
     }
 }

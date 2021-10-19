@@ -12,18 +12,18 @@ struct KeyFolderApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
-    @State private var isLock = false
+    @State private var isLocked = false
 
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                FolderListView()
+                FolderListView(isLocked: $isLocked)
             }
             .onChange(of: scenePhase) { phase in
-                isLock = true
+                isLocked = true
             }
-            .fullScreenCover(isPresented: $isLock) {
-                PasscodeView(isLocked: $isLock)
+            .fullScreenCover(isPresented: $isLocked) {
+                PasscodeView(isLocked: $isLocked)
             }
             .environmentObject(Store())
         }

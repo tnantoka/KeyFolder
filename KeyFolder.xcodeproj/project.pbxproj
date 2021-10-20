@@ -26,6 +26,7 @@
 		9BD06775271B17A700325F4F /* EntryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06774271B17A700325F4F /* EntryFormView.swift */; };
 		9BD06777271B93CA00325F4F /* QuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06776271B93CA00325F4F /* QuickLookView.swift */; };
 		9BD0679A271BC63500325F4F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06799271BC63500325F4F /* ImagePickerView.swift */; };
+		9BE8DACB2720407C0055F5C1 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8DACA2720407C0055F5C1 /* Passcode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		9BD06774271B17A700325F4F /* EntryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
 		9BD06776271B93CA00325F4F /* QuickLookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookView.swift; sourceTree = "<group>"; };
 		9BD06799271BC63500325F4F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		9BE8DACA2720407C0055F5C1 /* Passcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				9BD06760271AA78000325F4F /* Folder.swift */,
 				9BD06764271AAB6400325F4F /* Entry.swift */,
 				9BD0676F271AF3A000325F4F /* Store.swift */,
+				9BE8DACA2720407C0055F5C1 /* Passcode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				9BD06761271AA78000325F4F /* Folder.swift in Sources */,
 				9BD06770271AF3A000325F4F /* Store.swift in Sources */,
 				9BD06777271B93CA00325F4F /* QuickLookView.swift in Sources */,
+				9BE8DACB2720407C0055F5C1 /* Passcode.swift in Sources */,
 				9BD0675E271AA74A00325F4F /* FolderListView.swift in Sources */,
 				9BD0676E271ABB3600325F4F /* AppDelegate.swift in Sources */,
 				9BD06731271A9AB900325F4F /* KeyFolderApp.swift in Sources */,

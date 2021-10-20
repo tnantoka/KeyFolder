@@ -12,7 +12,7 @@ struct PasscodeView: View {
         case unlock, change, initial
     }
     
-    private let mode = Mode.unlock
+    let mode: Mode
     
     @State private var passcode = ""
     @FocusState private var isFocused
@@ -30,11 +30,24 @@ struct PasscodeView: View {
             .padding(.horizontal)
             .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(
-                leading: mode != .change ? nil : Button(action: {}) {
+                leading: mode != .change ? nil : Button(action: {
+                    isLocked = false
+                }) {
                     Image(systemName: "xmark")
                 },
                 trailing: Button(action: {
-                    isLocked = false
+                    switch mode {
+                    case .initial:
+                        Passcode().hashedPasscode = passcode
+                        isLocked = false
+                    case .unlock:
+                        if (Passcode().compare(passcode: passcode)) {
+                            isLocked = false
+                        }
+                    case .change:
+                        Passcode().hashedPasscode = passcode
+                        isLocked = false
+                    }
                 }) {
                     Image(systemName: "checkmark")
                 })
@@ -61,7 +74,7 @@ struct PasscodeView: View {
 struct PasscodeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PasscodeView(isLocked: .constant(false))
+            PasscodeView(mode: .unlock, isLocked: .constant(false))
         }
     }
 }

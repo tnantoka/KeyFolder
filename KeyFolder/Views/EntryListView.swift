@@ -12,8 +12,10 @@ struct EntryListView: View {
     @State private var isPreviwing: Bool = false
     @State private var previwingId = ""
     @State private var isEditing: Bool = false
-    @State private var isPicking: Bool = false
+    @State private var isPickingPhotos: Bool = false
+    @State private var isPickingFiles: Bool = false
     @State private var isDeleting: Bool = false
+    @State private var isShowingMenu: Bool = false
 
     let folder: Folder
 
@@ -51,8 +53,9 @@ struct EntryListView: View {
         .navigationBarItems(
             trailing: HStack {
                 if entries.first { folder in folder.isSelected } == nil {
-                    Button(action: {                        isPicking = true
-}) {
+                    Button(action: {
+                        isShowingMenu = true
+                    }) {
                     Image(systemName: "plus")
                     }
                 } else {
@@ -75,10 +78,17 @@ struct EntryListView: View {
             let entry = entries.first { entry in entry.isSelected }
             EntryFormView(name: entry?.name ?? "", folderId: entry?.folder.id ?? "", isShowing: $isEditing)
         }
-        .sheet(isPresented: $isPicking) {
-            ImagePickerView(isPresented: $isPicking, onPickImage: { image
+        .sheet(isPresented: $isPickingPhotos) {
+            ImagePickerView(isPresented: $isPickingPhotos, onPickImage: { image
                 in
                 store.addEntry(folder: folder, image: image)
+            }, onPickMovie: { url in
+                store.addEntry(folder: folder, movieURL: url)
+            })
+        }
+        .sheet(isPresented: $isPickingFiles) {
+            DocumentPickerView(onPickImage: { url in
+                store.addEntry(folder: folder, imageURL: url)
             }, onPickMovie: { url in
                 store.addEntry(folder: folder, movieURL: url)
             })
@@ -91,6 +101,17 @@ struct EntryListView: View {
                     store.delete(entry: entry)
                 }
             }, secondaryButton: .cancel(Text("Cancel")))
+        }
+        .actionSheet(isPresented: $isShowingMenu) {
+            ActionSheet(title: Text("Menu"), buttons: [
+                .default(Text("From photo library")) {
+                    isPickingPhotos = true
+                },
+                .default(Text("From files")) {
+                    isPickingFiles = true
+                },
+                .cancel(Text("Cancel"))
+            ])
         }
     }
 }

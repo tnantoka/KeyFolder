@@ -27,6 +27,7 @@
 		9BD06777271B93CA00325F4F /* QuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06776271B93CA00325F4F /* QuickLookView.swift */; };
 		9BD0679A271BC63500325F4F /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06799271BC63500325F4F /* ImagePickerView.swift */; };
 		9BE8DACB2720407C0055F5C1 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8DACA2720407C0055F5C1 /* Passcode.swift */; };
+		9BE8DB002721A7500055F5C1 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8DAFF2721A7500055F5C1 /* DocumentPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		9BD06799271BC63500325F4F /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		9BE8DACA2720407C0055F5C1 /* Passcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
 		9BE8DACF2720509F0055F5C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9BE8DAFF2721A7500055F5C1 /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				9BD06774271B17A700325F4F /* EntryFormView.swift */,
 				9BD06776271B93CA00325F4F /* QuickLookView.swift */,
 				9BD06799271BC63500325F4F /* ImagePickerView.swift */,
+				9BE8DAFF2721A7500055F5C1 /* DocumentPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				9BE8DACB2720407C0055F5C1 /* Passcode.swift in Sources */,
 				9BD0675E271AA74A00325F4F /* FolderListView.swift in Sources */,
 				9BD0676E271ABB3600325F4F /* AppDelegate.swift in Sources */,
+				9BE8DB002721A7500055F5C1 /* DocumentPickerView.swift in Sources */,
 				9BD06731271A9AB900325F4F /* KeyFolderApp.swift in Sources */,
 				9BD06767271AAB7300325F4F /* EntryListView.swift in Sources */,
 			);

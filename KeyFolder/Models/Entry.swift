@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UniformTypeIdentifiers
 
 struct Entry {
     let id: String
@@ -14,7 +15,8 @@ struct Entry {
     let isSelected: Bool
 
     var isMovie: Bool {
-        return name.hasSuffix(".mp4")
+        guard let mimeType = UTType(filenameExtension: url().pathExtension)?.preferredMIMEType else { return false }
+        return mimeType.hasPrefix("video")
     }
     
     init(name: String, folder: Folder) {

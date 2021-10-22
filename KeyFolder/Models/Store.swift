@@ -44,13 +44,23 @@ class Store: ObservableObject {
     
     func addEntry(folder: Folder, image: UIImage) {
         if let data = image.pngData() {
-            addEntry(folder: folder, data: data, name: "\(UUID().uuidString).png")
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.dateFormat = "yyyyMMddHHmmss"
+
+            addEntry(folder: folder, data: data, name: "\(formatter.string(from: Date())).png")
         }
     }
     
+    func addEntry(folder: Folder, imageURL: URL) {
+        if let data = try? Data(contentsOf: imageURL) {
+            addEntry(folder: folder, data: data, name: imageURL.lastPathComponent)
+        }
+    }
+
     func addEntry(folder: Folder, movieURL: URL) {
         if let data = try? Data(contentsOf: movieURL) {
-            addEntry(folder: folder, data: data, name: "\(UUID().uuidString).mov")
+            addEntry(folder: folder, data: data, name: movieURL.lastPathComponent)
         }
     }
     

@@ -50,7 +50,7 @@ struct PasscodeView: View {
                     }
                 }) {
                     Image(systemName: "checkmark")
-                })
+                }.disabled(passcode.isEmpty))
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                   isFocused = true

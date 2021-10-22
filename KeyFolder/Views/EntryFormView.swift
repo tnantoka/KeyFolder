@@ -43,7 +43,7 @@ struct EntryFormView: View {
                     isShowing = false
                                     }) {
                     Image(systemName: "checkmark")
-                })
+                }.disabled(name.isEmpty))
         }
     }
 }

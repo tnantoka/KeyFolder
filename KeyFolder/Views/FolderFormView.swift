@@ -47,7 +47,7 @@ struct FolderFormView: View {
                     isShowing = false
                 }) {
                     Image(systemName: "checkmark")
-                })
+                }.disabled(name.isEmpty))
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                   // isFocused = true

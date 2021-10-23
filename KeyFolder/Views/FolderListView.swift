@@ -10,7 +10,8 @@ import SwiftUI
 struct FolderListView: View {
     @EnvironmentObject private var store: Store
     @State private var isShowingMenu: Bool = false
-    @State private var isShowingPasscodeView: Bool = false
+    @State private var isShowingLicenses: Bool = false
+    @State private var isChangingPasscode: Bool = false
     @State private var isCreating: Bool = false
     @State private var isEditing: Bool = false
     @State private var isDeleting: Bool = false
@@ -68,9 +69,10 @@ struct FolderListView: View {
         .actionSheet(isPresented: $isShowingMenu) {
             ActionSheet(title: Text("Menu"), buttons: [
                 .default(Text("Change passcode")) {
-                    isShowingPasscodeView = true
+                    isChangingPasscode = true
                 },
-                .default(Text("Info")) {
+                .default(Text("Acknowledgements")) {
+                    isShowingLicenses = true
                 },
                 .cancel(Text("Cancel"))
             ])
@@ -90,8 +92,11 @@ struct FolderListView: View {
         .sheet(isPresented: $isEditing) {
             FolderFormView(mode: .edit, name: store.folders.first { folder in folder.isSelected }?.name ?? "", isShowing: $isEditing)
         }
-        .sheet(isPresented: $isShowingPasscodeView) {
-            PasscodeView(mode: .change, isLocked: $isShowingPasscodeView)
+        .sheet(isPresented: $isChangingPasscode) {
+            PasscodeView(mode: .change, isLocked: $isChangingPasscode)
+        }
+        .sheet(isPresented: $isShowingLicenses) {
+            LicensesView(isShowing: $isShowingLicenses)
         }
     }
 }

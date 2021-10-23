@@ -15,46 +15,36 @@ struct PasscodeView: View {
     let mode: Mode
     
     @State private var passcode = ""
-    @FocusState private var isFocused
     @Binding var isLocked: Bool
 
     var body: some View {
         NavigationView() {
-            VStack {
-                SecureField("Passcode", text: $passcode)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(.roundedBorder)
-                    .font(.largeTitle)
-                    .focused($isFocused)
-            }
-            .padding(.horizontal)
-            .navigationBarTitle(title, displayMode: .inline)
-            .navigationBarItems(
-                leading: mode != .change ? nil : Button(action: {
-                    isLocked = false
-                }) {
-                    Image(systemName: "xmark")
-                },
-                trailing: Button(action: {
-                    switch mode {
-                    case .initial:
-                        Passcode().hashedPasscode = passcode
+            GeometryReader { geometry in
+                VStack {
+                    SecureField("Passcode", text: $passcode)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.title)
+                        .padding(.bottom, 16)
+                        .disabled(true)
+                    KeypadView(text: $passcode, buttonSize: geometry.size.width * 0.2, onSubmit: {                         validate() })
+                }
+                .padding(.horizontal, geometry.size.width * 0.2)
+                .navigationBarTitle(title, displayMode: .inline)
+                .navigationBarItems(
+                    leading: mode != .change ? nil : Button(action: {
                         isLocked = false
-                    case .unlock:
-                        if (Passcode().compare(passcode: passcode)) {
-                            isLocked = false
-                        }
-                    case .change:
-                        Passcode().hashedPasscode = passcode
-                        isLocked = false
-                    }
-                }) {
-                    Image(systemName: "checkmark")
-                }.disabled(passcode.isEmpty))
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                  isFocused = true
-              }
+                    }) {
+                        Image(systemName: "xmark")
+                    },
+                    trailing: Button(action: {
+                        validate()
+                    }) {
+                        Image(systemName: "checkmark")
+                    }.disabled(passcode.isEmpty))
+                .frame(
+                    width: geometry.frame(in: .global).width,
+                    height: geometry.frame(in: .global).height
+                )
             }
         }
     }
@@ -67,6 +57,21 @@ struct PasscodeView: View {
             return "Change"
         case .initial:
             return "Set"
+        }
+    }
+    
+    private func validate() {
+        switch mode {
+        case .initial:
+            Passcode().hashedPasscode = passcode
+            isLocked = false
+        case .unlock:
+            if (Passcode().compare(passcode: passcode)) {
+                isLocked = false
+            }
+        case .change:
+            Passcode().hashedPasscode = passcode
+            isLocked = false
         }
     }
 }

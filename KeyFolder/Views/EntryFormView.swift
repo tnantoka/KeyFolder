@@ -12,6 +12,7 @@ struct EntryFormView: View {
 
     @State var name = ""
     @State var folderId = ""
+    @FocusState private var isFocused
     @Binding var isShowing: Bool
     
     var body: some View {
@@ -20,6 +21,7 @@ struct EntryFormView: View {
                 Section(header: Text("Name")) {
                     TextField("Name", text: $name)
                         .autocapitalization(.none)
+                        .focused($isFocused)
                 }
                 Section(header: Text("Folder")) {
                     Picker(selection: $folderId) {
@@ -44,6 +46,11 @@ struct EntryFormView: View {
                                     }) {
                     Image(systemName: "checkmark")
                 }.disabled(name.isEmpty))
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                   isFocused = true
+              }
+            }
         }
     }
 }

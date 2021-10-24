@@ -17,8 +17,7 @@ struct FolderFormView: View {
     let mode: Mode
 
     @State var name = ""
-    // FIXME: EXC_BAD_ACCESS
-    // @FocusState private var isFocused
+    @FocusState private var isFocused
     @Binding var isShowing: Bool
 
     var body: some View {
@@ -27,7 +26,7 @@ struct FolderFormView: View {
                 Section(header: Text("Name")) {
                     TextField("Name", text: $name)
                         .autocapitalization(.none)
-                        // .focused($isFocused)
+                        .focused($isFocused)
                 }
             }
             .navigationBarTitle(title, displayMode: .inline)
@@ -49,11 +48,10 @@ struct FolderFormView: View {
                     Image(systemName: "checkmark")
                 }.disabled(name.isEmpty))
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                  // isFocused = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                   isFocused = true
               }
             }
-
         }
     }
     

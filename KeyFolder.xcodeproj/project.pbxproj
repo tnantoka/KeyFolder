@@ -10,6 +10,7 @@
 		9B8C735627243F5300F34B2D /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C735527243F5300F34B2D /* LicensesView.swift */; };
 		9B8C7358272445B900F34B2D /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C7357272445B900F34B2D /* SafariView.swift */; };
 		9B8C735A272459A100F34B2D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C7359272459A100F34B2D /* WebView.swift */; };
+		9B8C735D272595D700F34B2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C735F272595D700F34B2D /* Localizable.strings */; };
 		9BCC3CEF2722FA2F00FF0A40 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCC3CEE2722FA2F00FF0A40 /* KeypadView.swift */; };
 		9BD06731271A9AB900325F4F /* KeyFolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06730271A9AB900325F4F /* KeyFolderApp.swift */; };
 		9BD06735271A9ABA00325F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD06734271A9ABA00325F4F /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 		9B8C735527243F5300F34B2D /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
 		9B8C7357272445B900F34B2D /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		9B8C7359272459A100F34B2D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9B8C735E272595D700F34B2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9B8C7360272595D900F34B2D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BCC3CEE2722FA2F00FF0A40 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
 		9BD0672D271A9AB900325F4F /* KeyFolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyFolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD06730271A9AB900325F4F /* KeyFolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFolderApp.swift; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 				9BD0676D271ABB3600325F4F /* AppDelegate.swift */,
 				9BD06734271A9ABA00325F4F /* Assets.xcassets */,
 				9BD06736271A9ABA00325F4F /* Preview Content */,
+				9B8C735F272595D700F34B2D /* Localizable.strings */,
 			);
 			path = KeyFolder;
 			sourceTree = "<group>";
@@ -293,6 +297,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 9BD06724271A9AB900325F4F;
 			productRefGroup = 9BD0672E271A9AB900325F4F /* Products */;
@@ -311,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8C735D272595D700F34B2D /* Localizable.strings in Resources */,
 				9BD0676C271ABAC200325F4F /* city.jpg in Resources */,
 				9BD0676B271ABAC200325F4F /* sky.mp4 in Resources */,
 				9BD06738271A9ABA00325F4F /* Preview Assets.xcassets in Resources */,
@@ -391,6 +397,18 @@
 			targetProxy = 9BD06748271A9ABB00325F4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9B8C735F272595D700F34B2D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B8C735E272595D700F34B2D /* en */,
+				9B8C7360272595D900F34B2D /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9BD0674F271A9ABB00325F4F /* Debug */ = {

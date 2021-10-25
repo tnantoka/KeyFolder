@@ -21,7 +21,7 @@ struct PasscodeView: View {
         NavigationView() {
             GeometryReader { geometry in
                 VStack {
-                    SecureField("Passcode", text: $passcode)
+                    SecureField(NSLocalizedString("Passcode", comment: ""), text: $passcode)
                         .textFieldStyle(.roundedBorder)
                         .font(.title)
                         .padding(.bottom, 16)
@@ -52,11 +52,11 @@ struct PasscodeView: View {
     private var title: String {
         switch mode {
         case .unlock:
-            return "Unlock"
+            return NSLocalizedString("Unlock", comment: "")
         case .change:
-            return "Change"
+            return NSLocalizedString("Change passcode", comment: "")
         case .initial:
-            return "Set"
+            return NSLocalizedString("Set passcode", comment: "")
         }
     }
     

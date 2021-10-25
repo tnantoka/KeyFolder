@@ -14,14 +14,12 @@ struct SafariView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
         let controller = SFSafariViewController(url: url)
         
-        print("debug: \(url)")
         controller.dismissButtonStyle = .close
         
         return controller
     }
     
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {
-        print("debug: 2 \(url)")
     }
 }
 

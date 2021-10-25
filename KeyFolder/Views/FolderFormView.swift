@@ -58,9 +58,9 @@ struct FolderFormView: View {
     private var title: String {
         switch mode {
         case .new:
-            return "New folder"
+            return NSLocalizedString("New folder", comment: "")
         case .edit:
-            return "Edit folder"
+            return NSLocalizedString("Edit folder", comment: "")
         }
     }
 }

@@ -16,7 +16,6 @@ class Store: ObservableObject {
         entries = folders.flatMap({ folder in
             Entry.all(for: folder)
         })
-        print(entries)
     }
     
     func select(folder: Folder, isSelected: Bool) {

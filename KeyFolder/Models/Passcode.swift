@@ -10,7 +10,7 @@ import CryptoKit
 
 class Passcode {
     let passcodeKey = "passcodeKey"
-    let salt = "3oUVNeZWLHXzc_u71bOB"
+    let salt = Constants.passcodeSalt
     
     var isConfigured: Bool {
         !hashedPasscode.isEmpty

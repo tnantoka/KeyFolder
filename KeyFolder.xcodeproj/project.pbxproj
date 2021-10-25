@@ -11,6 +11,7 @@
 		9B8C7358272445B900F34B2D /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C7357272445B900F34B2D /* SafariView.swift */; };
 		9B8C735A272459A100F34B2D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C7359272459A100F34B2D /* WebView.swift */; };
 		9B8C735D272595D700F34B2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C735F272595D700F34B2D /* Localizable.strings */; };
+		9B8C73622726DAD000F34B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C73612726DAD000F34B2D /* Constants.swift */; };
 		9BCC3CEF2722FA2F00FF0A40 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCC3CEE2722FA2F00FF0A40 /* KeypadView.swift */; };
 		9BD06731271A9AB900325F4F /* KeyFolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06730271A9AB900325F4F /* KeyFolderApp.swift */; };
 		9BD06735271A9ABA00325F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD06734271A9ABA00325F4F /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		9B8C7359272459A100F34B2D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9B8C735E272595D700F34B2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B8C7360272595D900F34B2D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9B8C73612726DAD000F34B2D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9BCC3CEE2722FA2F00FF0A40 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
 		9BD0672D271A9AB900325F4F /* KeyFolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyFolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD06730271A9AB900325F4F /* KeyFolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFolderApp.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				9BD06764271AAB6400325F4F /* Entry.swift */,
 				9BD0676F271AF3A000325F4F /* Store.swift */,
 				9BE8DACA2720407C0055F5C1 /* Passcode.swift */,
+				9B8C73612726DAD000F34B2D /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD06772271B178F00325F4F /* FolderFormView.swift in Sources */,
+				9B8C73622726DAD000F34B2D /* Constants.swift in Sources */,
 				9BD06775271B17A700325F4F /* EntryFormView.swift in Sources */,
 				9BD06765271AAB6400325F4F /* Entry.swift in Sources */,
 				9BD0675C271A9AE200325F4F /* PasscodeView.swift in Sources */,

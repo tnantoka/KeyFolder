@@ -23,32 +23,35 @@ struct EntryListView: View {
         let entries = store.entries.filter { entry in
             entry.folder.id == folder.id
         }
-        List(entries, id: \.id) { entry in
-            Button {
-                previwingId = entry.id
-                isPreviwing = true
-            } label: {
-                HStack {
-                    Button {
-                        store.select(entry: entry, isSelected: !entry.isSelected)
-                    } label: {
-                        if (entry.isSelected) {
-                            Image(systemName: "checkmark.circle")
-                        } else {
-                            if (entry.isMovie) {
-                                Image(systemName: "play.rectangle")
+        VStack {
+            List(entries, id: \.id) { entry in
+                Button {
+                    previwingId = entry.id
+                    isPreviwing = true
+                } label: {
+                    HStack {
+                        Button {
+                            store.select(entry: entry, isSelected: !entry.isSelected)
+                        } label: {
+                            if (entry.isSelected) {
+                                Image(systemName: "checkmark.circle")
                             } else {
-                                Image(systemName: "photo")
+                                if (entry.isMovie) {
+                                    Image(systemName: "play.rectangle")
+                                } else {
+                                    Image(systemName: "photo")
+                                }
                             }
                         }
+                        .buttonStyle(PlainButtonStyle())
+                        .frame(width: 32)
+                        Text(entry.name)
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .frame(width: 32)
-                    Text(entry.name)
                 }
             }
+            .listStyle(PlainListStyle())
+            AdBannerView().frame(height: 50)
         }
-        .listStyle(PlainListStyle())
         .navigationBarTitle("Entries", displayMode: .inline)
         .navigationBarItems(
             trailing: HStack {

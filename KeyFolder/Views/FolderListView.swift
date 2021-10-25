@@ -18,27 +18,30 @@ struct FolderListView: View {
     @Binding var isLocked: Bool
 
     var body: some View {
-        List(isLocked ? [] : store.folders, id: \.id) { folder in
-            NavigationLink {
-                EntryListView(folder: folder)
-            } label: {
-                HStack {
-                    Button {
-                        store.select(folder: folder, isSelected: !folder.isSelected)
-                    } label: {
-                        if (folder.isSelected) {
-                            Image(systemName: "checkmark.circle")
-                        } else {
-                            Image(systemName: "folder")
+        VStack {
+            List(isLocked ? [] : store.folders, id: \.id) { folder in
+                NavigationLink {
+                    EntryListView(folder: folder)
+                } label: {
+                    HStack {
+                        Button {
+                            store.select(folder: folder, isSelected: !folder.isSelected)
+                        } label: {
+                            if (folder.isSelected) {
+                                Image(systemName: "checkmark.circle")
+                            } else {
+                                Image(systemName: "folder")
+                            }
                         }
+                        .buttonStyle(PlainButtonStyle())
+                        .frame(width: 32)
+                        Text(folder.name)
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .frame(width: 32)
-                    Text(folder.name)
                 }
             }
+            .listStyle(PlainListStyle())
+            AdBannerView().frame(height: 50)
         }
-        .listStyle(PlainListStyle())
         .navigationBarTitle("Folders", displayMode: .inline)
         .navigationBarItems(
             leading: Button(action: {

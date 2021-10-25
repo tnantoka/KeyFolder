@@ -12,6 +12,8 @@
 		9B8C735A272459A100F34B2D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C7359272459A100F34B2D /* WebView.swift */; };
 		9B8C735D272595D700F34B2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C735F272595D700F34B2D /* Localizable.strings */; };
 		9B8C73622726DAD000F34B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C73612726DAD000F34B2D /* Constants.swift */; };
+		9B8C73652726E6F700F34B2D /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8C73642726E6F700F34B2D /* GoogleMobileAds */; };
+		9B8C73672726EC2D00F34B2D /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C73662726EC2D00F34B2D /* AdBannerView.swift */; };
 		9BCC3CEF2722FA2F00FF0A40 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCC3CEE2722FA2F00FF0A40 /* KeypadView.swift */; };
 		9BD06731271A9AB900325F4F /* KeyFolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD06730271A9AB900325F4F /* KeyFolderApp.swift */; };
 		9BD06735271A9ABA00325F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD06734271A9ABA00325F4F /* Assets.xcassets */; };
@@ -60,6 +62,7 @@
 		9B8C735E272595D700F34B2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B8C7360272595D900F34B2D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B8C73612726DAD000F34B2D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9B8C73662726EC2D00F34B2D /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		9BCC3CEE2722FA2F00FF0A40 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
 		9BD0672D271A9AB900325F4F /* KeyFolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyFolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD06730271A9AB900325F4F /* KeyFolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFolderApp.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8C73652726E6F700F34B2D /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +193,7 @@
 				9B8C735527243F5300F34B2D /* LicensesView.swift */,
 				9B8C7357272445B900F34B2D /* SafariView.swift */,
 				9B8C7359272459A100F34B2D /* WebView.swift */,
+				9B8C73662726EC2D00F34B2D /* AdBannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +235,9 @@
 			dependencies = (
 			);
 			name = KeyFolder;
+			packageProductDependencies = (
+				9B8C73642726E6F700F34B2D /* GoogleMobileAds */,
+			);
 			productName = KeyFolder;
 			productReference = 9BD0672D271A9AB900325F4F /* KeyFolder.app */;
 			productType = "com.apple.product-type.application";
@@ -303,6 +311,9 @@
 				ja,
 			);
 			mainGroup = 9BD06724271A9AB900325F4F;
+			packageReferences = (
+				9B8C73632726E6F700F34B2D /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
+			);
 			productRefGroup = 9BD0672E271A9AB900325F4F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -359,6 +370,7 @@
 				9BD06777271B93CA00325F4F /* QuickLookView.swift in Sources */,
 				9BCC3CEF2722FA2F00FF0A40 /* KeypadView.swift in Sources */,
 				9BE8DACB2720407C0055F5C1 /* Passcode.swift in Sources */,
+				9B8C73672726EC2D00F34B2D /* AdBannerView.swift in Sources */,
 				9BD0675E271AA74A00325F4F /* FolderListView.swift in Sources */,
 				9BD0676E271ABB3600325F4F /* AppDelegate.swift in Sources */,
 				9B8C7358272445B900F34B2D /* SafariView.swift in Sources */,
@@ -470,6 +482,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -524,6 +537,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -721,6 +735,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B8C73632726E6F700F34B2D /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quanghits/GoogleMobileAds";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B8C73642726E6F700F34B2D /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B8C73632726E6F700F34B2D /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BD06725271A9AB900325F4F /* Project object */;
 }

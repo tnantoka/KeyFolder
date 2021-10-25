@@ -12,8 +12,8 @@ struct KeyFolderApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
-    @State private var isLocked = false
-
+    @State private var isLocked = true
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {

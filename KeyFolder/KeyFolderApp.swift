@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
 
 @main
 struct KeyFolderApp: App {
@@ -24,6 +25,9 @@ struct KeyFolderApp: App {
             }
             .fullScreenCover(isPresented: $isLocked) {
                 PasscodeView(mode: Passcode().isConfigured ? .unlock : .initial, isLocked: $isLocked)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
             }
             .environmentObject(Store())
         }

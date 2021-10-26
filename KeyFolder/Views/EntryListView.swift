@@ -50,7 +50,7 @@ struct EntryListView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            AdBannerView().frame(height: 50)
+            AdBannerView()
         }
         .navigationBarTitle("Entries", displayMode: .inline)
         .navigationBarItems(

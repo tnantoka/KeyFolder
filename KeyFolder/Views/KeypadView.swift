@@ -17,10 +17,10 @@ struct KeypadButton<Label>: View where Label: View {
                 .frame(width: size, height: size)
                 .overlay(
                     RoundedRectangle(cornerRadius: size * 0.5)
-                        .stroke(Color.gray, lineWidth: 1)
+                        .stroke(.black.opacity(0.87), lineWidth: 1)
                 )
                 .font(.system(size: size * 0.3))
-                .foregroundColor(.gray)
+                .foregroundColor(.black.opacity(0.87))
 
 
         }.buttonStyle(.plain)

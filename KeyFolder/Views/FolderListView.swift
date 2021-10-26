@@ -40,7 +40,7 @@ struct FolderListView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            AdBannerView().frame(height: 50)
+            AdBannerView()
         }
         .navigationBarTitle("Folders", displayMode: .inline)
         .navigationBarItems(

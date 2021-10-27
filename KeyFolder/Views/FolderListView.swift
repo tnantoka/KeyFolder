@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct FolderListView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject private var store: Store
-    @State private var isShowingMenu: Bool = false
-    @State private var isShowingLicenses: Bool = false
-    @State private var isChangingPasscode: Bool = false
-    @State private var isCreating: Bool = false
-    @State private var isEditing: Bool = false
-    @State private var isDeleting: Bool = false
+    @State private var isShowingMenu = false
+    @State private var isShowingLicenses = false
+    @State private var isChangingPasscode = false
+    @State private var isCreating = false
+    @State private var isEditing = false
+    @State private var isDeleting = false
     @Binding var isLocked: Bool
 
     var body: some View {
@@ -100,6 +101,14 @@ struct FolderListView: View {
         }
         .sheet(isPresented: $isShowingLicenses) {
             LicensesView(isShowing: $isShowingLicenses)
+        }
+        .onChange(of: scenePhase) { phase in
+            isShowingMenu = false
+            isShowingLicenses = false
+            isChangingPasscode = false
+            isCreating = false
+            isEditing = false
+            isDeleting = false
         }
     }
 }

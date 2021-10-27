@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct EntryListView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject private var store: Store
-    @State private var isPreviwing: Bool = false
     @State private var previwingId = ""
-    @State private var isEditing: Bool = false
-    @State private var isPickingPhotos: Bool = false
-    @State private var isPickingFiles: Bool = false
-    @State private var isDeleting: Bool = false
-    @State private var isShowingMenu: Bool = false
+    @State private var isPreviwing = false
+    @State private var isEditing = false
+    @State private var isPickingPhotos = false
+    @State private var isPickingFiles = false
+    @State private var isDeleting = false
+    @State private var isShowingMenu = false
 
     let folder: Folder
 
@@ -115,6 +116,15 @@ struct EntryListView: View {
                 },
                 .cancel(Text("Cancel"))
             ])
+        }
+        .onChange(of: scenePhase) { phase in
+            previwingId = ""
+            isPreviwing = false
+            isEditing = false
+            isPickingPhotos = false
+            isPickingFiles = false
+            isDeleting = false
+            isShowingMenu = false
         }
     }
 }

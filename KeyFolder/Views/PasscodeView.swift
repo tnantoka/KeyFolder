@@ -24,7 +24,7 @@ struct PasscodeView: View {
                 VStack {
                     SecureField(NSLocalizedString("Passcode", comment: ""), text: $passcode)
                         .textFieldStyle(.roundedBorder)
-                        .font(.title)
+                        .font(.title2)
                         .padding(.bottom, 16)
                         .disabled(true)
                     KeypadView(
@@ -35,7 +35,7 @@ struct PasscodeView: View {
                         }
                     )
                 }
-                .padding(.horizontal, geometry.size.width * (isLandscape ? 0.34 : 0.2))
+                .padding(.horizontal, geometry.size.width * (isLandscape ? 0.38 : 0.2))
                 .navigationBarTitle(title, displayMode: .inline)
                 .navigationBarItems(
                     leading: mode != .change ? nil : Button(action: {

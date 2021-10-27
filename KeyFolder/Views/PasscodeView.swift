@@ -14,6 +14,7 @@ struct PasscodeView: View {
     
     let mode: Mode
     
+    @State private var isLandscape = UIDevice.current.orientation.isLandscape
     @State private var passcode = ""
     @Binding var isLocked: Bool
 
@@ -26,9 +27,15 @@ struct PasscodeView: View {
                         .font(.title)
                         .padding(.bottom, 16)
                         .disabled(true)
-                    KeypadView(text: $passcode, buttonSize: geometry.size.width * 0.2, onSubmit: {                         validate() })
+                    KeypadView(
+                        text: $passcode,
+                        buttonSize: isLandscape ? geometry.size.height * 0.14 : geometry.size.width * 0.18,
+                        onSubmit: {
+                            validate()
+                        }
+                    )
                 }
-                .padding(.horizontal, geometry.size.width * 0.2)
+                .padding(.horizontal, geometry.size.width * (isLandscape ? 0.34 : 0.2))
                 .navigationBarTitle(title, displayMode: .inline)
                 .navigationBarItems(
                     leading: mode != .change ? nil : Button(action: {
@@ -46,6 +53,9 @@ struct PasscodeView: View {
                     height: geometry.frame(in: .global).height
                 )
             }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            isLandscape = UIDevice.current.orientation.isLandscape
         }
     }
     

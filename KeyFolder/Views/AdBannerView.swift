@@ -30,7 +30,11 @@ struct AdBannerViewWithController: UIViewControllerRepresentable {
         #endif
 
         view.rootViewController = controller
+        #if DEBUG
+//        view.load(GADRequest())
+        #else
         view.load(GADRequest())
+        #endif
 
         controller.view.addSubview(view)
 

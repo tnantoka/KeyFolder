@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   KeyFolder
 
@@ -6,3 +6,27 @@
   
 */
 
+"Passcode" = "Passcode";
+"Unlock" = "Unlock";
+"Change passcode" = "Change passcode";
+"Set passcode" = "Set passcode";
+
+"Folders" = "Folders";
+"Acknowledgements" = "Acknowledgements";
+"Cancel" = "Cancel";
+
+"Delete" = "Delete";
+"Are you sure?" = "Are you sure?";
+
+"Menu" = "Menu";
+
+"New folder" = "New folder";
+"Edit folder" = "Edit folder";
+"Name" = "Name";
+
+"Entries" = "Entries";
+"Edit entry" = "Edit entry";
+"Folder" = "Folder";
+
+"From photo library" = "From photo library";
+"From files" = "From files";

@@ -20,7 +20,7 @@ struct FolderListView: View {
 
     var body: some View {
         VStack {
-            List(isLocked ? [] : store.folders, id: \.id) { folder in
+            List(store.folders, id: \.id) { folder in
                 NavigationLink {
                     EntryListView(folder: folder)
                 } label: {
@@ -110,6 +110,7 @@ struct FolderListView: View {
             isEditing = false
             isDeleting = false
         }
+        .opacity(isLocked ? 0 : 1)
     }
 }
 

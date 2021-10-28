@@ -15,6 +15,8 @@ struct KeyFolderApp: App {
 
     @State private var isLocked = true
     
+    let store = Store()
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -29,7 +31,7 @@ struct KeyFolderApp: App {
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
                 ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
             }
-            .environmentObject(Store())
+            .environmentObject(store)
         }
     }
 }

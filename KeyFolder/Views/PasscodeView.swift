@@ -14,9 +14,10 @@ struct PasscodeView: View {
     
     let mode: Mode
     
+    @Binding var isLocked: Bool
     @State private var isLandscape = UIDevice.current.orientation.isLandscape
     @State private var passcode = ""
-    @Binding var isLocked: Bool
+    @State private var hasError = false
 
     var body: some View {
         NavigationView() {
@@ -27,9 +28,13 @@ struct PasscodeView: View {
                         .font(.title2)
                         .padding(.bottom, 16)
                         .disabled(true)
+                        .foregroundColor(hasError ? .red : Color("KeypadButtonColor"))
                     KeypadView(
                         text: $passcode,
                         buttonSize: isLandscape ? geometry.size.height * 0.14 : geometry.size.width * 0.18,
+                        onChange: {
+                            hasError = false
+                        },
                         onSubmit: {
                             validate()
                         }
@@ -78,6 +83,8 @@ struct PasscodeView: View {
         case .unlock:
             if (Passcode().compare(passcode: passcode)) {
                 isLocked = false
+            } else {
+                hasError = true
             }
         case .change:
             Passcode().hashedPasscode = passcode

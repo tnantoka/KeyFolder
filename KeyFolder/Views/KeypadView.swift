@@ -30,6 +30,7 @@ struct KeypadButton<Label>: View where Label: View {
 struct KeypadView: View {
     @Binding var text: String
     let buttonSize: CGFloat
+    let onChange: () -> Void
     let onSubmit: () -> Void
 
     var body: some View {
@@ -38,12 +39,15 @@ struct KeypadView: View {
                 Spacer()
                 KeypadButton(label: Text("1"), size: buttonSize) {
                     text += "1"
+                    onChange()
                 }
                 KeypadButton(label: Text("2"), size: buttonSize) {
                     text += "2"
+                    onChange()
                 }
                 KeypadButton(label: Text("3"), size: buttonSize) {
                     text += "3"
+                    onChange()
                 }
                 Spacer()
             }
@@ -51,12 +55,15 @@ struct KeypadView: View {
                 Spacer()
                 KeypadButton(label: Text("4"), size: buttonSize) {
                     text += "4"
+                    onChange()
                 }
                 KeypadButton(label: Text("5"), size: buttonSize) {
                     text += "5"
+                    onChange()
                 }
                 KeypadButton(label: Text("6"), size: buttonSize) {
                     text += "6"
+                    onChange()
                 }
                 Spacer()
             }
@@ -64,12 +71,15 @@ struct KeypadView: View {
                 Spacer()
                 KeypadButton(label: Text("7"), size: buttonSize) {
                     text += "7"
+                    onChange()
                 }
                 KeypadButton(label: Text("8"), size: buttonSize) {
                     text += "8"
+                    onChange()
                 }
                 KeypadButton(label: Text("9"), size: buttonSize) {
                     text += "9"
+                    onChange()
                 }
                 Spacer()
             }
@@ -78,10 +88,12 @@ struct KeypadView: View {
                 KeypadButton(label: Image(systemName: "delete.left"), size: buttonSize) {
                     if (!text.isEmpty) {
                         text.removeLast()
+                        onChange()
                     }
                 }
                 KeypadButton(label: Text("0"), size: buttonSize) {
                     text += "0"
+                    onChange()
                 }
                 KeypadButton(label: Image(systemName: "checkmark"), size: buttonSize) {
                     onSubmit()
@@ -94,6 +106,6 @@ struct KeypadView: View {
 
 struct KeypadView_Previews: PreviewProvider {
     static var previews: some View {
-        KeypadView(text: .constant(""), buttonSize: 32, onSubmit: {})
+        KeypadView(text: .constant(""), buttonSize: 32, onChange: {}, onSubmit: {})
     }
 }

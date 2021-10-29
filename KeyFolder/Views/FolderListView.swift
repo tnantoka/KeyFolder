@@ -22,7 +22,7 @@ struct FolderListView: View {
         VStack {
             List(store.folders, id: \.id) { folder in
                 NavigationLink {
-                    EntryListView(folder: folder)
+                    EntryListView(isLocked: $isLocked, folder: folder)
                 } label: {
                     HStack {
                         Button {

@@ -17,6 +17,7 @@ struct EntryListView: View {
     @State private var isPickingFiles = false
     @State private var isDeleting = false
     @State private var isShowingMenu = false
+    @Binding var isLocked: Bool
 
     let folder: Folder
 
@@ -126,13 +127,14 @@ struct EntryListView: View {
             isDeleting = false
             isShowingMenu = false
         }
+        .opacity(isLocked ? 0 : 1)
     }
 }
 
 struct EntryListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            EntryListView(folder: Folder(name: "example"))
+            EntryListView(isLocked: .constant(false), folder: Folder(name: "example"))
         }
     }
 }

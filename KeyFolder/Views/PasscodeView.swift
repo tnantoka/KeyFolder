@@ -15,7 +15,7 @@ struct PasscodeView: View {
     let mode: Mode
     
     @Binding var isLocked: Bool
-    @State private var isLandscape = UIDevice.current.orientation.isLandscape
+    @State private var isPortrait = UIDevice.current.orientation.isPortrait
     @State private var passcode = ""
     @State private var hasError = false
 
@@ -31,7 +31,7 @@ struct PasscodeView: View {
                         .foregroundColor(hasError ? .red : Color("KeypadButtonColor"))
                     KeypadView(
                         text: $passcode,
-                        buttonSize: isLandscape ? geometry.size.height * 0.14 : geometry.size.width * 0.18,
+                        buttonSize: isPortrait ? geometry.size.width * 0.18 : geometry.size.height * 0.14,
                         onChange: {
                             hasError = false
                         },
@@ -40,7 +40,7 @@ struct PasscodeView: View {
                         }
                     )
                 }
-                .padding(.horizontal, geometry.size.width * (isLandscape ? 0.38 : 0.2))
+                .padding(.horizontal, geometry.size.width * (isPortrait ? 0.2 : 0.38))
                 .navigationBarTitle(title, displayMode: .inline)
                 .navigationBarItems(
                     leading: mode != .change ? nil : Button(action: {
@@ -60,7 +60,7 @@ struct PasscodeView: View {
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-            isLandscape = UIDevice.current.orientation.isLandscape
+            isPortrait = UIDevice.current.orientation.isPortrait
         }
     }
     

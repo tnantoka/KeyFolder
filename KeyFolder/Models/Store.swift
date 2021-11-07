@@ -12,6 +12,25 @@ class Store: ObservableObject {
     @Published var entries = [Entry]()
     
     init() {
+        if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let foldersURL = documentsURL.appendingPathComponent("folders")
+            if !FileManager.default.fileExists(atPath: foldersURL.path) {
+                do {
+                    let exampleURL = foldersURL.appendingPathComponent("example")
+                    try FileManager.default.createDirectory(at: exampleURL, withIntermediateDirectories: true)
+                    try [
+                        Bundle.main.url(forResource: "city", withExtension: "jpg"),
+                        Bundle.main.url(forResource: "sky", withExtension: "mp4"),
+                    ].forEach { url in
+                        if let url = url {
+                            try FileManager.default.copyItem(at: url, to: exampleURL.appendingPathComponent(url.lastPathComponent))
+                        }
+                    }
+                } catch {
+                }
+            }
+        }
+
         folders = Folder.all()
         entries = folders.flatMap({ folder in
             Entry.all(for: folder)

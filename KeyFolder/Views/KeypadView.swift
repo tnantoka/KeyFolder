@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct KeypadButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(configuration.isPressed ? Color("KeypadTextColor") : Color("KeypadButtonColor"))
+            .background(configuration.isPressed ? Color("KeypadButtonColor") : Color("KeypadTextColor"))
+            .clipShape(Circle())
+    }
+}
+
 struct KeypadButton<Label>: View where Label: View {
     let label: Label
     let size: CGFloat
@@ -17,13 +26,10 @@ struct KeypadButton<Label>: View where Label: View {
                 .frame(width: size, height: size)
                 .overlay(
                     RoundedRectangle(cornerRadius: size * 0.5)
-                        .stroke(Color("KeypadButtonColor"), lineWidth: 1)
+                        .stroke(Color("KeypadButtonColor"), lineWidth: 2)
                 )
                 .font(.system(size: size * 0.3))
-                .foregroundColor(Color("KeypadButtonColor"))
-
-
-        }.buttonStyle(.plain)
+        }.buttonStyle(KeypadButtonStyle())
     }
 }
 

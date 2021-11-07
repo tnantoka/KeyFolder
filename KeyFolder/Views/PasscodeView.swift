@@ -22,16 +22,23 @@ struct PasscodeView: View {
     var body: some View {
         NavigationView() {
             GeometryReader { geometry in
+                let isPhone = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone
+                let buttonSize = isPhone
+                  ? (isPortrait ? geometry.size.width * 0.18 : geometry.size.height * 0.14)
+                  : (isPortrait ? geometry.size.width * 0.14 : geometry.size.height * 0.14)
+                let padding = isPhone
+                  ? geometry.size.width * (isPortrait ? 0.2 : 0.38)
+                  : geometry.size.width * (isPortrait ? 0.28 : 0.36)
                 VStack {
                     SecureField(NSLocalizedString("Passcode", comment: ""), text: $passcode)
                         .textFieldStyle(.roundedBorder)
-                        .font(.title2)
+                        .font(isPhone ? .title2 : .largeTitle)
                         .padding(.bottom, 16)
                         .disabled(true)
                         .foregroundColor(hasError ? .red : Color("KeypadButtonColor"))
                     KeypadView(
                         text: $passcode,
-                        buttonSize: isPortrait ? geometry.size.width * 0.18 : geometry.size.height * 0.14,
+                        buttonSize: buttonSize,
                         onChange: {
                             hasError = false
                         },
@@ -40,7 +47,7 @@ struct PasscodeView: View {
                         }
                     )
                 }
-                .padding(.horizontal, geometry.size.width * (isPortrait ? 0.2 : 0.38))
+                .padding(.horizontal, padding)
                 .navigationBarTitle(title, displayMode: .inline)
                 .navigationBarItems(
                     leading: mode != .change ? nil : Button(action: {

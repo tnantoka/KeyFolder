@@ -38,11 +38,7 @@ struct EntryListView: View {
                             if (entry.isSelected) {
                                 Image(systemName: "checkmark.circle")
                             } else {
-                                if (entry.isMovie) {
-                                    Image(systemName: "play.rectangle")
-                                } else {
-                                    Image(systemName: "photo")
-                                }
+                                Image(systemName: entry.icon)
                             }
                         }
                         .buttonStyle(PlainButtonStyle())

@@ -20,6 +20,8 @@ class Store: ObservableObject {
                 [
                     Bundle.main.url(forResource: "city", withExtension: "jpg"),
                     Bundle.main.url(forResource: "sky", withExtension: "mp4"),
+                    Bundle.main.url(forResource: "example", withExtension: "pdf"),
+                    Bundle.main.url(forResource: "example", withExtension: "txt"),
                 ].forEach { url in
                     if let url = url {
                         try? FileManager.default.copyItem(at: url, to: exampleURL.appendingPathComponent(url.lastPathComponent))

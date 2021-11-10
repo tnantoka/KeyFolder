@@ -14,9 +14,21 @@ struct Entry {
     let folder: Folder
     let isSelected: Bool
 
-    var isMovie: Bool {
-        guard let mimeType = UTType(filenameExtension: url().pathExtension)?.preferredMIMEType else { return false }
-        return mimeType.hasPrefix("video")
+    var icon: String {
+        let defaultIcon = "circle"
+        guard let mimeType = UTType(filenameExtension: url().pathExtension)?.preferredMIMEType else { return defaultIcon }
+
+        if (mimeType.hasPrefix("video")) {
+            return "play.rectangle"
+        } else if (mimeType.hasPrefix("image")) {
+            return "photo"
+        } else if (mimeType == "text/plain") {
+            return "doc.text"
+        } else if (mimeType == "application/pdf") {
+            return "doc.richtext"
+        } else {
+           return defaultIcon
+        }
     }
     
     init(name: String, folder: Folder) {

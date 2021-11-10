@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9B6E5173273760580034B30C /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E5172273760580034B30C /* blank.png */; };
+		9B6E5176273C04B60034B30C /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E5174273C04B60034B30C /* example.txt */; };
+		9B6E5177273C04B60034B30C /* example.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E5175273C04B60034B30C /* example.pdf */; };
 		9B8C735627243F5300F34B2D /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C735527243F5300F34B2D /* LicensesView.swift */; };
 		9B8C7358272445B900F34B2D /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C7357272445B900F34B2D /* SafariView.swift */; };
 		9B8C735A272459A100F34B2D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C7359272459A100F34B2D /* WebView.swift */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		9B6E5172273760580034B30C /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
+		9B6E5174273C04B60034B30C /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
+		9B6E5175273C04B60034B30C /* example.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = example.pdf; sourceTree = "<group>"; };
 		9B8C735527243F5300F34B2D /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
 		9B8C7357272445B900F34B2D /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		9B8C7359272459A100F34B2D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 			children = (
 				9BD0676A271ABAC200325F4F /* city.jpg */,
 				9BD06769271ABAC200325F4F /* sky.mp4 */,
+				9B6E5175273C04B60034B30C /* example.pdf */,
+				9B6E5174273C04B60034B30C /* example.txt */,
 				9B6E5172273760580034B30C /* blank.png */,
 			);
 			path = Resources;
@@ -337,11 +343,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6E5177273C04B60034B30C /* example.pdf in Resources */,
 				9B8C735D272595D700F34B2D /* Localizable.strings in Resources */,
 				9B8C736A2728417500F34B2D /* InfoPlist.strings in Resources */,
 				9BD0676C271ABAC200325F4F /* city.jpg in Resources */,
 				9BD0676B271ABAC200325F4F /* sky.mp4 in Resources */,
 				9BD06738271A9ABA00325F4F /* Preview Assets.xcassets in Resources */,
+				9B6E5176273C04B60034B30C /* example.txt in Resources */,
 				9B6E5173273760580034B30C /* blank.png in Resources */,
 				9BD06735271A9ABA00325F4F /* Assets.xcassets in Resources */,
 			);

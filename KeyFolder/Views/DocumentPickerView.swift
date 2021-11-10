@@ -14,7 +14,7 @@ struct DocumentPickerView: UIViewControllerRepresentable {
     let onPickMovie: (URL) -> Void
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.image, .movie])
+        let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.image, .movie, .pdf, .text])
         
         controller.delegate = context.coordinator
         

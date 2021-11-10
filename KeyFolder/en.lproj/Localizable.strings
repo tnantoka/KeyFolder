@@ -30,3 +30,6 @@
 
 "From photo library" = "From photo library";
 "From files" = "From files";
+
+"Save" = "Save";
+"The passcode is stored only on the device. It can't be reset if you forget." = "The passcode is stored only on the device. It can't be reset if you forget.";

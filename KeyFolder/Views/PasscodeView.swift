@@ -18,6 +18,8 @@ struct PasscodeView: View {
     @State private var isPortrait = UIDevice.current.orientation.isPortrait
     @State private var passcode = ""
     @State private var hasError = false
+    @State private var isMask = true
+    @State private var isSaving = false
 
     var body: some View {
         NavigationView() {
@@ -30,12 +32,31 @@ struct PasscodeView: View {
                   ? geometry.size.width * (isPortrait ? 0.2 : 0.38)
                   : geometry.size.width * (isPortrait ? 0.28 : 0.36)
                 VStack {
-                    SecureField(NSLocalizedString("Passcode", comment: ""), text: $passcode)
-                        .textFieldStyle(.roundedBorder)
-                        .font(isPhone ? .title2 : .largeTitle)
-                        .padding(.bottom, 16)
-                        .disabled(true)
-                        .foregroundColor(hasError ? .red : Color("KeypadButtonColor"))
+                    ZStack(alignment: .trailing) {
+                        if isMask {
+                            SecureField(NSLocalizedString("Passcode", comment: ""), text: $passcode)
+                                .textFieldStyle(.roundedBorder)
+                                .font(isPhone ? .title2 : .largeTitle)
+                                .disabled(true)
+                                .foregroundColor(hasError ? .red : Color("KeypadButtonColor"))
+                                .frame(minWidth: 200)
+                                .frame(height: 44)
+                        } else {
+                            TextField(NSLocalizedString("Passcode", comment: ""), text: $passcode)
+                                .textFieldStyle(.roundedBorder)
+                                .font(isPhone ? .title2 : .largeTitle)
+                                .disabled(true)
+                                .foregroundColor(hasError ? .red : Color("KeypadButtonColor"))
+                                .frame(minWidth: 200)
+                                .frame(height: 44)
+                        }
+                        Button(action: { isMask.toggle() }) {
+                            Image(systemName: isMask ? "eye" : "eye.slash")
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.trailing, 8)
+                    }
+                    .padding(.bottom, 16)
                     KeypadView(
                         text: $passcode,
                         buttonSize: buttonSize,
@@ -64,6 +85,14 @@ struct PasscodeView: View {
                     width: geometry.frame(in: .global).width,
                     height: geometry.frame(in: .global).height
                 )
+                .alert(isPresented: $isSaving) {
+                    Alert(title: Text(title),
+                          message: Text("The passcode is stored only on the device. It can't be reset if you forget."),
+                            primaryButton: .destructive(Text("Save")) {
+                                    Passcode().hashedPasscode = passcode
+                                    isLocked = false
+                    }, secondaryButton: .cancel(Text("Cancel")))
+                }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
@@ -85,8 +114,7 @@ struct PasscodeView: View {
     private func validate() {
         switch mode {
         case .initial:
-            Passcode().hashedPasscode = passcode
-            isLocked = false
+            isSaving = true
         case .unlock:
             if (Passcode().compare(passcode: passcode)) {
                 isLocked = false
@@ -94,8 +122,7 @@ struct PasscodeView: View {
                 hasError = true
             }
         case .change:
-            Passcode().hashedPasscode = passcode
-            isLocked = false
+            isSaving = true
         }
     }
 }

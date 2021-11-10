@@ -30,3 +30,6 @@
 
 "From photo library" = "フォトライブラリから";
 "From files" = "ファイルから";
+
+"Save" = "保存";
+"The passcode is stored only on the device. It can't be reset if you forget." = "パスコードは端末内にのみ保存されます。忘れたらリセットできません。";

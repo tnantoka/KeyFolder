@@ -59,6 +59,17 @@ struct EntryListView: View {
                     }) {
                     Image(systemName: "plus")
                     }
+                    .actionSheet(isPresented: $isShowingMenu) {
+                        ActionSheet(title: Text("Menu"), buttons: [
+                            .default(Text("From photo library")) {
+                                isPickingPhotos = true
+                            },
+                            .default(Text("From files")) {
+                                isPickingFiles = true
+                            },
+                            .cancel(Text("Cancel"))
+                        ])
+                    }
                 } else {
                     Button(action: {
                         isEditing = true
@@ -102,17 +113,6 @@ struct EntryListView: View {
                     store.delete(entry: entry)
                 }
             }, secondaryButton: .cancel(Text("Cancel")))
-        }
-        .actionSheet(isPresented: $isShowingMenu) {
-            ActionSheet(title: Text("Menu"), buttons: [
-                .default(Text("From photo library")) {
-                    isPickingPhotos = true
-                },
-                .default(Text("From files")) {
-                    isPickingFiles = true
-                },
-                .cancel(Text("Cancel"))
-            ])
         }
         .onChange(of: scenePhase) { phase in
             previwingId = ""

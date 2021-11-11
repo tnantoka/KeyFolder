@@ -49,7 +49,18 @@ struct FolderListView: View {
                 isShowingMenu = true
             }) {
                 Image(systemName: "gearshape")
-            },
+            }
+                .actionSheet(isPresented: $isShowingMenu) {
+                    ActionSheet(title: Text("Menu"), buttons: [
+                        .default(Text("Change passcode")) {
+                            isChangingPasscode = true
+                        },
+                        .default(Text("Acknowledgements")) {
+                            isShowingLicenses = true
+                        },
+                        .cancel(Text("Cancel"))
+                    ])
+                },
             trailing: HStack {
                 if store.folders.first { folder in folder.isSelected } == nil {
                     Button(action: {
@@ -70,17 +81,6 @@ struct FolderListView: View {
                     }
                 }
             })
-        .actionSheet(isPresented: $isShowingMenu) {
-            ActionSheet(title: Text("Menu"), buttons: [
-                .default(Text("Change passcode")) {
-                    isChangingPasscode = true
-                },
-                .default(Text("Acknowledgements")) {
-                    isShowingLicenses = true
-                },
-                .cancel(Text("Cancel"))
-            ])
-        }
         .alert(isPresented: $isDeleting) {
             Alert(title: Text("Delete"),
                   message: Text("Are you sure?"),

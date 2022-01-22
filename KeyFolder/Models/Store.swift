@@ -70,8 +70,11 @@ class Store: ObservableObject {
     }
     
     func addEntry(folder: Folder, imageURL: URL) {
-        if let data = try? Data(contentsOf: imageURL) {
-            addEntry(folder: folder, data: data, name: imageURL.lastPathComponent)
+        if imageURL.startAccessingSecurityScopedResource() {
+            if let data = try? Data(contentsOf: imageURL) {
+                addEntry(folder: folder, data: data, name: imageURL.lastPathComponent)
+            }
+            imageURL.stopAccessingSecurityScopedResource()
         }
     }
 

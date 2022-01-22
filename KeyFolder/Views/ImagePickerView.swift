@@ -21,7 +21,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
         controller.sourceType = UIImagePickerController.SourceType.photoLibrary
         controller.allowsEditing = false
         controller.mediaTypes = ["public.image", "public.movie"]
-        
+
         return controller
     }
 

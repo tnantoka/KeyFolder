@@ -15,6 +15,7 @@ struct DocumentPickerView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
         let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.image, .movie, .pdf, .text])
+        controller.allowsMultipleSelection = true
         
         controller.delegate = context.coordinator
         
@@ -35,14 +36,16 @@ struct DocumentPickerView: UIViewControllerRepresentable {
             self.parent = parent
         }
 
-        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-            guard let mimeType = UTType(filenameExtension: url.pathExtension)?.preferredMIMEType else { return }
-                    
-            if mimeType.hasPrefix("image") {
-                parent.onPickImage(url)
-            } else {
-                parent.onPickMovie(url)
-            }            
+        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+            for url in urls {
+                guard let mimeType = UTType(filenameExtension: url.pathExtension)?.preferredMIMEType else { return }
+
+                if mimeType.hasPrefix("image") {
+                    parent.onPickImage(url)
+                } else {
+                    parent.onPickMovie(url)
+                }
+            }
         }
     }
 }

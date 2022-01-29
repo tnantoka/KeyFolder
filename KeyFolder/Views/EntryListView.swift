@@ -24,7 +24,7 @@ struct EntryListView: View {
     var body: some View {
         let entries = store.entries.filter { entry in
             entry.folder.id == folder.id
-        }
+        }.sorted { $0.name < $1.name }
         VStack {
             List(entries, id: \.id) { entry in
                 Button {

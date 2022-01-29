@@ -20,7 +20,7 @@ struct FolderListView: View {
 
     var body: some View {
         VStack {
-            List(store.folders, id: \.id) { folder in
+            List(store.folders.sorted { $0.name < $1.name }, id: \.id) { folder in
                 NavigationLink {
                     EntryListView(isLocked: $isLocked, folder: folder)
                 } label: {

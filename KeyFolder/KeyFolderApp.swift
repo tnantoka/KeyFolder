@@ -11,7 +11,6 @@ import AppTrackingTransparency
 @main
 struct KeyFolderApp: App {
     @Environment(\.scenePhase) private var scenePhase
-    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     @State private var isLocked = true
     

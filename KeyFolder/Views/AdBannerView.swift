@@ -31,7 +31,9 @@ struct AdBannerViewWithController: UIViewControllerRepresentable {
 
         view.rootViewController = controller
         #if DEBUG
-//        view.load(GADRequest())
+            if (Constants.enableAd) {
+                view.load(GADRequest())
+            }
         #else
         view.load(GADRequest())
         #endif

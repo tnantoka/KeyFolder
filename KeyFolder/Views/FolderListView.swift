@@ -62,7 +62,7 @@ struct FolderListView: View {
                     ])
                 },
             trailing: HStack {
-                if store.folders.first { folder in folder.isSelected } == nil {
+                if store.folders.first(where: { folder in folder.isSelected }) == nil {
                     Button(action: {
                         isCreating = true
                     }) {

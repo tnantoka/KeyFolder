@@ -53,7 +53,7 @@ struct EntryListView: View {
         .navigationBarTitle("Entries", displayMode: .inline)
         .navigationBarItems(
             trailing: HStack {
-                if entries.first { folder in folder.isSelected } == nil {
+                if entries.first(where: { folder in folder.isSelected }) == nil {
                     Button(action: {
                         isShowingMenu = true
                     }) {

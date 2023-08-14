@@ -15,23 +15,19 @@ private let sites = [
 
 struct LicensesView: View {
     @Binding var isShowing: Bool
-    @State var isBrowsing = false
     @State var url = URL(string: sites[0]["url"] ?? "")!
 
     var body: some View {
         NavigationView() {
             List {
-                ForEach(0..<sites.count) { i in
+                ForEach(0..<sites.count, id: \.self) { i in
                     NavigationLink(destination: {
                         WebView(url: URL(string: sites[i]["url"] ?? "")!)
-                        
+//                        SafariView(url: URL(string: sites[i]["url"] ?? "")!)
                     }) {
                         Text(sites[i]["name"] ?? "")
                         
                     }
-                }
-                .sheet(isPresented: $isBrowsing) {
-                    SafariView(url: url)
                 }
             }
                 .navigationBarTitle("Acknowledgements", displayMode: .inline)

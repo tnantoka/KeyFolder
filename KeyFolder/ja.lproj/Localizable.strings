@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  KeyFolder
+
+  Created by Tatsuya Tobioka on 2021/10/24.
+  
+*/
+
+"Passcode" = "パスコード";
+"Unlock" = "ロック解除";
+"Change passcode" = "パスコード変更";
+"Set passcode" = "パスコード設定";
+
+"Folders" = "フォルダ一覧";
+"Acknowledgements" = "謝辞";
+"Cancel" = "キャンセル";
+
+"Delete" = "削除";
+"Are you sure?" = "よろしいですか？";
+
+"Menu" = "メニュー";
+
+"New folder" = "フォルダー作成";
+"Edit folder" = "フォルダー編集";
+"Name" = "名前";
+
+"Entries" = "ファイル一覧";
+"Edit entry" = "ファイル編集";
+"Folder" = "フォルダー";
+
+"From photo library" = "フォトライブラリから";
+"From files" = "ファイルから";
+
+"Save" = "保存";
+"The passcode is stored only on the device. It can't be reset if you forget." = "パスコードは端末内にのみ保存されます。忘れたらリセットできません。";

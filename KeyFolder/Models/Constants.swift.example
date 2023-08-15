@@ -1,0 +1,13 @@
+//
+//  Constants.swift
+//  KeyFolder
+//
+//  Created by Tatsuya Tobioka on 2021/10/25.
+//
+
+import Foundation
+
+struct Constants {
+    static let passcodeSalt = ""
+    static let adUnitID = ""
+}

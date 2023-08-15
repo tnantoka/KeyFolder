@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  KeyFolder
+
+  Created by Tatsuya Tobioka on 2021/10/26.
+  
+*/
+
+"NSPhotoLibraryUsageDescription" = "Access the photo library for importing image files to folder.";
+
+"NSUserTrackingUsageDescription" = "It will be used to deliver personalized ads to you.";

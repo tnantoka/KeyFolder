@@ -10,7 +10,7 @@ import SwiftUI
 private let sites = [
     ["name": "examples/city.jpg", "url": "https://pixabay.com/images/id-6599328/"],
     ["name": "examples/sky.mp4", "url": "https://pixabay.com/videos/id-80724/"],
-    ["name": "quanghits/GoogleMobileAds", "url": "https://github.com/quanghits/GoogleMobileAds"],
+    ["name": "googleads/swift-package-manager-google-mobile-ads", "url": "https://github.com/googleads/swift-package-manager-google-mobile-ads"],
 ]
 
 struct LicensesView: View {

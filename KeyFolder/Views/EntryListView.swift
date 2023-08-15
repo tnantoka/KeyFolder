@@ -48,7 +48,7 @@ struct EntryListView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            // AdBannerView()
+            AdBannerView()
         }
         .navigationBarTitle("Entries", displayMode: .inline)
         .navigationBarItems(

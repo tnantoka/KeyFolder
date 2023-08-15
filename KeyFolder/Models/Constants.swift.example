@@ -9,5 +9,20 @@ import Foundation
 
 struct Constants {
     static let passcodeSalt = ""
-    static let adUnitID = ""
+
+    #if DEBUG
+        static let adUnitID = "ca-app-pub-3940256099942544/2934735716"
+    #else
+        static let adUnitID = ""
+    #endif
+
+    #if DEBUG
+        #if targetEnvironment(simulator)
+            static let isEnabledAd = true
+        #else
+            static let isEnabledAd = false
+        #endif
+    #else
+        static let isEnabledAd = true
+    #endif
 }

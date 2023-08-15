@@ -5,14 +5,23 @@
 //  Created by Tatsuya Tobioka on 2021/10/25.
 //
 
-/*
 import SwiftUI
 import GoogleMobileAds
 
 struct AdBannerView: View {
+    @State var onReady = false
+    
     var body: some View {
         let height = [50, 100].randomElement() ?? 50
-        AdBannerViewWithController(height: height).frame(height: CGFloat(height))
+        
+        if onReady {
+            AdBannerViewWithController(height: height).frame(height: CGFloat(height))
+        } else {
+            VStack {}
+                .onAppear {
+                    AdManager.shared.start { onReady = true }
+                }
+        }
     }
 }
 
@@ -24,20 +33,12 @@ struct AdBannerViewWithController: UIViewControllerRepresentable {
 
         let view = GADBannerView(adSize: height == 50 ? GADAdSizeBanner : GADAdSizeLargeBanner)
 
-        #if DEBUG
-        view.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        #else
         view.adUnitID = Constants.adUnitID
-        #endif
 
         view.rootViewController = controller
-        #if DEBUG
-            if (Constants.enableAd) {
-                view.load(GADRequest())
-            }
-        #else
-        view.load(GADRequest())
-        #endif
+        if (Constants.isEnabledAd) {
+            view.load(GADRequest())
+        }
 
         controller.view.addSubview(view)
 
@@ -65,4 +66,3 @@ struct AdBannerView_Previews: PreviewProvider {
         AdBannerView()
     }
 }
-*/

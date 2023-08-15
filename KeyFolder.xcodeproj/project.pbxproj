@@ -36,6 +36,8 @@
 		9B8C35CF2A8BA7A100B32879 /* QuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35C12A8BA7A100B32879 /* QuickLookView.swift */; };
 		9B8C35D42A8BAA4600B32879 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C35D62A8BAA4600B32879 /* InfoPlist.strings */; };
 		9B8C35D82A8BAA4F00B32879 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C35DA2A8BAA4F00B32879 /* Localizable.strings */; };
+		9B8C35DF2A8BAFC000B32879 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8C35DE2A8BAFC000B32879 /* GoogleMobileAds */; };
+		9B8C35E22A8BB64700B32879 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35E12A8BB64700B32879 /* AdManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		9B8C35D72A8BAA4A00B32879 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B8C35D92A8BAA4F00B32879 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B8C35DB2A8BAA5200B32879 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9B8C35DC2A8BAE2600B32879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9B8C35E12A8BB64700B32879 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8C35DF2A8BAFC000B32879 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,8 @@
 		9B8C358C2A8B9A0D00B32879 /* KeyFolder */ = {
 			isa = PBXGroup;
 			children = (
+				9B8C35DC2A8BAE2600B32879 /* Info.plist */,
+				9B8C35E02A8BB63800B32879 /* Managers */,
 				9B8C359B2A8BA78F00B32879 /* Resources */,
 				9B8C35A62A8BA79B00B32879 /* Models */,
 				9B8C35B32A8BA7A100B32879 /* Views */,
@@ -168,6 +175,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9B8C35E02A8BB63800B32879 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9B8C35E12A8BB64700B32879 /* AdManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +199,9 @@
 			dependencies = (
 			);
 			name = KeyFolder;
+			packageProductDependencies = (
+				9B8C35DE2A8BAFC000B32879 /* GoogleMobileAds */,
+			);
 			productName = KeyFolder;
 			productReference = 9B8C358A2A8B9A0D00B32879 /* KeyFolder.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +231,9 @@
 				ja,
 			);
 			mainGroup = 9B8C35812A8B9A0D00B32879;
+			packageReferences = (
+				9B8C35DD2A8BAFC000B32879 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 9B8C358B2A8B9A0D00B32879 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,6 +285,7 @@
 				9B8C35C52A8BA7A100B32879 /* KeypadView.swift in Sources */,
 				9B8C35C82A8BA7A100B32879 /* ImagePickerView.swift in Sources */,
 				9B8C35C42A8BA7A100B32879 /* AdBannerView.swift in Sources */,
+				9B8C35E22A8BB64700B32879 /* AdManager.swift in Sources */,
 				9B8C35AF2A8BA79B00B32879 /* Folder.swift in Sources */,
 				9B8C35C22A8BA7A100B32879 /* SafariView.swift in Sources */,
 			);
@@ -418,6 +440,7 @@
 				DEVELOPMENT_TEAM = H4Z42X3L6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KeyFolder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tnantoka.KeyFolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -447,6 +471,7 @@
 				DEVELOPMENT_TEAM = H4Z42X3L6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KeyFolder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,6 +482,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tnantoka.KeyFolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -487,6 +513,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B8C35DD2A8BAFC000B32879 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B8C35DE2A8BAFC000B32879 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B8C35DD2A8BAFC000B32879 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B8C35822A8B9A0D00B32879 /* Project object */;
 }

@@ -15,7 +15,7 @@ struct Entry {
     let isSelected: Bool
 
     var icon: String {
-        let defaultIcon = "circle"
+        let defaultIcon = "questionmark.square"
         guard let mimeType = UTType(filenameExtension: url().pathExtension)?.preferredMIMEType else { return defaultIcon }
 
         if (mimeType.hasPrefix("video")) {

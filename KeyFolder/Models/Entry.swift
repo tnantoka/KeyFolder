@@ -9,6 +9,8 @@ import Foundation
 import UniformTypeIdentifiers
 
 struct Entry {
+  static let ignoredNames = [".DS_Store"]
+
   let id: String
   let name: String
   let folder: Folder
@@ -64,7 +66,7 @@ struct Entry {
       do {
         return try FileManager.default.contentsOfDirectory(atPath: folderURL.path).map { name in
           Entry(name: name, folder: folder)
-        }
+        }.filter { !ignoredNames.contains($0.name) }
       } catch {
         return []
       }

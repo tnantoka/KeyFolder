@@ -9,24 +9,24 @@ import SwiftUI
 
 @main
 struct KeyFolderApp: App {
-    @Environment(\.scenePhase) private var scenePhase
+  @Environment(\.scenePhase) private var scenePhase
 
-    @State private var isLocked = true
-    
-    let store = Store()
+  @State private var isLocked = true
 
-    var body: some Scene {
-        WindowGroup {
-            NavigationView {
-                FolderListView(isLocked: $isLocked)
-            }
-            .onChange(of: scenePhase) { phase in
-                isLocked = true
-            }
-            .fullScreenCover(isPresented: $isLocked) {
-                PasscodeView(mode: Passcode().isConfigured ? .unlock : .initial, isLocked: $isLocked)
-            }
-            .environmentObject(store)
-        }
+  let store = Store()
+
+  var body: some Scene {
+    WindowGroup {
+      NavigationView {
+        FolderListView(isLocked: $isLocked)
+      }
+      .onChange(of: scenePhase) { phase in
+        isLocked = true
+      }
+      .fullScreenCover(isPresented: $isLocked) {
+        PasscodeView(mode: Passcode().isConfigured ? .unlock : .initial, isLocked: $isLocked)
+      }
+      .environmentObject(store)
     }
+  }
 }

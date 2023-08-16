@@ -53,9 +53,7 @@ struct EntryFormView: View {
         ).disabled(name.isEmpty)
       )
       .onAppear {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-          isFocused = true
-        }
+        isFocused = true
       }
     }
   }

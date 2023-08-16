@@ -23,7 +23,7 @@ struct LicensesView: View {
   var body: some View {
     NavigationView {
       List {
-        ForEach(0..<sites.count, id: \.self) { i in
+        ForEach(sites.indices, id: \.self) { i in
           NavigationLink(
             destination: {
               WebView(url: URL(string: sites[i]["url"] ?? "")!)

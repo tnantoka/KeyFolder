@@ -37,7 +37,9 @@ struct AdBannerViewWithController: UIViewControllerRepresentable {
 
         view.rootViewController = controller
         if (Constants.isEnabledAd) {
-            view.load(GADRequest())
+            let request = GADRequest()
+            request.scene = UIApplication.shared.connectedScenes.first { $0.activationState == .foregroundActive } as? UIWindowScene
+            view.load(request)
         }
 
         controller.view.addSubview(view)

@@ -20,7 +20,6 @@
 		9B8C35B02A8BA79B00B32879 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35AA2A8BA79B00B32879 /* Entry.swift */; };
 		9B8C35B12A8BA79B00B32879 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35AB2A8BA79B00B32879 /* Store.swift */; };
 		9B8C35B22A8BA79B00B32879 /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35AC2A8BA79B00B32879 /* Passcode.swift */; };
-		9B8C35C22A8BA7A100B32879 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B42A8BA7A100B32879 /* SafariView.swift */; };
 		9B8C35C32A8BA7A100B32879 /* FolderFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */; };
 		9B8C35C42A8BA7A100B32879 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */; };
 		9B8C35C52A8BA7A100B32879 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B72A8BA7A100B32879 /* KeypadView.swift */; };
@@ -54,7 +53,6 @@
 		9B8C35AA2A8BA79B00B32879 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		9B8C35AB2A8BA79B00B32879 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9B8C35AC2A8BA79B00B32879 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
-		9B8C35B42A8BA7A100B32879 /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderFormView.swift; sourceTree = "<group>"; };
 		9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		9B8C35B72A8BA7A100B32879 /* KeypadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 		9B8C35B32A8BA7A100B32879 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9B8C35B42A8BA7A100B32879 /* SafariView.swift */,
 				9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */,
 				9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */,
 				9B8C35B72A8BA7A100B32879 /* KeypadView.swift */,
@@ -285,7 +282,6 @@
 				9B8C35C42A8BA7A100B32879 /* AdBannerView.swift in Sources */,
 				9B8C35E22A8BB64700B32879 /* AdManager.swift in Sources */,
 				9B8C35AF2A8BA79B00B32879 /* Folder.swift in Sources */,
-				9B8C35C22A8BA7A100B32879 /* SafariView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

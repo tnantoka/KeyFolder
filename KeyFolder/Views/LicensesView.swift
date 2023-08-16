@@ -27,7 +27,6 @@ struct LicensesView: View {
           NavigationLink(
             destination: {
               WebView(url: URL(string: sites[i]["url"] ?? "")!)
-              //                        SafariView(url: URL(string: sites[i]["url"] ?? "")!)
             },
             label: {
               Text(sites[i]["name"] ?? "")

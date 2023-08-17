@@ -104,7 +104,7 @@ struct PasscodeView: View {
             message: Text(
               "The passcode is stored only on the device. It can't be reset if you forget."),
             primaryButton: .destructive(Text("Save")) {
-              Passcode().hashedPasscode = passcode
+              PasscodeManager().hashedPasscode = passcode
               isLocked = false
             }, secondaryButton: .cancel(Text("Cancel")))
         }
@@ -132,7 +132,7 @@ struct PasscodeView: View {
     case .initial:
       isSaving = true
     case .unlock:
-      if Passcode().compare(passcode: passcode) {
+      if PasscodeManager().compare(passcode: passcode) {
         isLocked = false
       } else {
         hasError = true

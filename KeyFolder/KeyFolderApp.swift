@@ -24,7 +24,11 @@ struct KeyFolderApp: App {
         isLocked = true
       }
       .fullScreenCover(isPresented: $isLocked) {
-        PasscodeView(mode: Passcode().isConfigured ? .unlock : .initial, isLocked: $isLocked)
+        if PasscodeManager().isConfigured {
+          PasscodeView(mode: .unlock, isLocked: $isLocked)
+        } else {
+          SetPasscodePage(isShowing: $isLocked)
+        }
       }
       .environmentObject(store)
     }

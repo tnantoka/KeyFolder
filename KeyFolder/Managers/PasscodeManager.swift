@@ -1,5 +1,5 @@
 //
-//  Passcode.swift
+//  PasscodeManager.swift
 //  KeyFolder
 //
 //  Created by Tatsuya Tobioka on 2021/10/20.
@@ -8,7 +8,7 @@
 import CryptoKit
 import Foundation
 
-class Passcode {
+class PasscodeManager {
   let passcodeKey = "passcodeKey"
   let salt = Constants.passcodeSalt
 

@@ -17,19 +17,18 @@ class PasscodeManager {
   }
 
   var hashedPasscode: String {
-    get {
-      UserDefaults.standard.string(forKey: passcodeKey) ?? ""
-    }
-    set {
-      UserDefaults.standard.set(hash(passcode: newValue), forKey: passcodeKey)
-    }
+    UserDefaults.standard.string(forKey: passcodeKey) ?? ""
+  }
+
+  func change(passcode: String) {
+    UserDefaults.standard.set(hash(passcode: passcode), forKey: passcodeKey)
   }
 
   func compare(passcode: String) -> Bool {
     return hashedPasscode == hash(passcode: passcode)
   }
 
-  func hash(passcode: String) -> String {
+  private func hash(passcode: String) -> String {
     guard let data = "\(passcode)_\(salt)".data(using: .utf8) else { return "" }
     return SHA256.hash(data: data).description
   }

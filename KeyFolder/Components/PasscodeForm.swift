@@ -17,6 +17,7 @@ struct PasscodeForm: View {
   @State var isMasked = true
 
   let onConfirm: () -> Void
+  let hasError: Bool
 
   var body: some View {
     VStack {
@@ -25,6 +26,7 @@ struct PasscodeForm: View {
           .disabled(true)
           .multilineTextAlignment(.center)
           .font(.largeTitle)
+          .foregroundColor(hasError ? .red : .primary)
         Button(
           action: {
             isMasked.toggle()
@@ -133,7 +135,7 @@ struct PasscodeForm_Previews: PreviewProvider {
     @State private var passcode: String = ""
 
     var body: some View {
-      PasscodeForm(passcode: $passcode, onConfirm: {})
+      PasscodeForm(passcode: $passcode, onConfirm: {}, hasError: false)
     }
   }
 

@@ -112,7 +112,7 @@ struct FolderListView: View {
         isShowing: $isEditing)
     }
     .sheet(isPresented: $isChangingPasscode) {
-      PasscodeView(mode: .change, isLocked: $isChangingPasscode)
+      ChangePasscodePage(isShowing: $isChangingPasscode)
     }
     .sheet(isPresented: $isShowingLicenses) {
       LicensesView(isShowing: $isShowingLicenses)

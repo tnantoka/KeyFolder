@@ -22,13 +22,11 @@
 		9B8C35B22A8BA79B00B32879 /* PasscodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35AC2A8BA79B00B32879 /* PasscodeManager.swift */; };
 		9B8C35C32A8BA7A100B32879 /* FolderFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */; };
 		9B8C35C42A8BA7A100B32879 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */; };
-		9B8C35C52A8BA7A100B32879 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B72A8BA7A100B32879 /* KeypadView.swift */; };
 		9B8C35C72A8BA7A100B32879 /* EntryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B92A8BA7A100B32879 /* EntryFormView.swift */; };
 		9B8C35C82A8BA7A100B32879 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35BA2A8BA7A100B32879 /* ImagePickerView.swift */; };
 		9B8C35C92A8BA7A100B32879 /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35BB2A8BA7A100B32879 /* FolderListView.swift */; };
 		9B8C35CA2A8BA7A100B32879 /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35BC2A8BA7A100B32879 /* LicensesView.swift */; };
 		9B8C35CB2A8BA7A100B32879 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35BD2A8BA7A100B32879 /* WebView.swift */; };
-		9B8C35CC2A8BA7A100B32879 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35BE2A8BA7A100B32879 /* PasscodeView.swift */; };
 		9B8C35CD2A8BA7A100B32879 /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35BF2A8BA7A100B32879 /* EntryListView.swift */; };
 		9B8C35CE2A8BA7A100B32879 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35C02A8BA7A100B32879 /* DocumentPickerView.swift */; };
 		9B8C35CF2A8BA7A100B32879 /* QuickLookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35C12A8BA7A100B32879 /* QuickLookView.swift */; };
@@ -38,6 +36,8 @@
 		9B8C35E22A8BB64700B32879 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35E12A8BB64700B32879 /* AdManager.swift */; };
 		9B8C35E82A8D106C00B32879 /* SetPasscodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35E72A8D106C00B32879 /* SetPasscodePage.swift */; };
 		9B8C35EA2A8D108D00B32879 /* PasscodeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35E92A8D108D00B32879 /* PasscodeForm.swift */; };
+		9B8C35EC2A8F5BE900B32879 /* UnlockPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35EB2A8F5BE900B32879 /* UnlockPage.swift */; };
+		9B8C35EE2A8F62A800B32879 /* ChangePasscodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35ED2A8F62A800B32879 /* ChangePasscodePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,13 +57,11 @@
 		9B8C35AC2A8BA79B00B32879 /* PasscodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeManager.swift; sourceTree = "<group>"; };
 		9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderFormView.swift; sourceTree = "<group>"; };
 		9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
-		9B8C35B72A8BA7A100B32879 /* KeypadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
 		9B8C35B92A8BA7A100B32879 /* EntryFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
 		9B8C35BA2A8BA7A100B32879 /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		9B8C35BB2A8BA7A100B32879 /* FolderListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
 		9B8C35BC2A8BA7A100B32879 /* LicensesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
 		9B8C35BD2A8BA7A100B32879 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		9B8C35BE2A8BA7A100B32879 /* PasscodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		9B8C35BF2A8BA7A100B32879 /* EntryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListView.swift; sourceTree = "<group>"; };
 		9B8C35C02A8BA7A100B32879 /* DocumentPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 		9B8C35C12A8BA7A100B32879 /* QuickLookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLookView.swift; sourceTree = "<group>"; };
@@ -75,6 +73,8 @@
 		9B8C35E12A8BB64700B32879 /* AdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		9B8C35E72A8D106C00B32879 /* SetPasscodePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasscodePage.swift; sourceTree = "<group>"; };
 		9B8C35E92A8D108D00B32879 /* PasscodeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeForm.swift; sourceTree = "<group>"; };
+		9B8C35EB2A8F5BE900B32879 /* UnlockPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockPage.swift; sourceTree = "<group>"; };
+		9B8C35ED2A8F62A800B32879 /* ChangePasscodePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasscodePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,13 +162,11 @@
 			children = (
 				9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */,
 				9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */,
-				9B8C35B72A8BA7A100B32879 /* KeypadView.swift */,
 				9B8C35B92A8BA7A100B32879 /* EntryFormView.swift */,
 				9B8C35BA2A8BA7A100B32879 /* ImagePickerView.swift */,
 				9B8C35BB2A8BA7A100B32879 /* FolderListView.swift */,
 				9B8C35BC2A8BA7A100B32879 /* LicensesView.swift */,
 				9B8C35BD2A8BA7A100B32879 /* WebView.swift */,
-				9B8C35BE2A8BA7A100B32879 /* PasscodeView.swift */,
 				9B8C35BF2A8BA7A100B32879 /* EntryListView.swift */,
 				9B8C35C02A8BA7A100B32879 /* DocumentPickerView.swift */,
 				9B8C35C12A8BA7A100B32879 /* QuickLookView.swift */,
@@ -189,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				9B8C35E72A8D106C00B32879 /* SetPasscodePage.swift */,
+				9B8C35ED2A8F62A800B32879 /* ChangePasscodePage.swift */,
+				9B8C35EB2A8F5BE900B32879 /* UnlockPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -291,17 +291,17 @@
 				9B8C35CB2A8BA7A100B32879 /* WebView.swift in Sources */,
 				9B8C35B02A8BA79B00B32879 /* Entry.swift in Sources */,
 				9B8C35C32A8BA7A100B32879 /* FolderFormView.swift in Sources */,
+				9B8C35EC2A8F5BE900B32879 /* UnlockPage.swift in Sources */,
 				9B8C35CD2A8BA7A100B32879 /* EntryListView.swift in Sources */,
 				9B8C358E2A8B9A0D00B32879 /* KeyFolderApp.swift in Sources */,
 				9B8C35E82A8D106C00B32879 /* SetPasscodePage.swift in Sources */,
 				9B8C35B22A8BA79B00B32879 /* PasscodeManager.swift in Sources */,
 				9B8C35CA2A8BA7A100B32879 /* LicensesView.swift in Sources */,
+				9B8C35EE2A8F62A800B32879 /* ChangePasscodePage.swift in Sources */,
 				9B8C35C92A8BA7A100B32879 /* FolderListView.swift in Sources */,
 				9B8C35CF2A8BA7A100B32879 /* QuickLookView.swift in Sources */,
-				9B8C35CC2A8BA7A100B32879 /* PasscodeView.swift in Sources */,
 				9B8C35AD2A8BA79B00B32879 /* Constants.swift in Sources */,
 				9B8C35C72A8BA7A100B32879 /* EntryFormView.swift in Sources */,
-				9B8C35C52A8BA7A100B32879 /* KeypadView.swift in Sources */,
 				9B8C35C82A8BA7A100B32879 /* ImagePickerView.swift in Sources */,
 				9B8C35C42A8BA7A100B32879 /* AdBannerView.swift in Sources */,
 				9B8C35E22A8BB64700B32879 /* AdManager.swift in Sources */,

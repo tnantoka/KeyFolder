@@ -1,13 +1,13 @@
 //
-//  SetPasscodePage.swift
+//  ChangePasscodePage.swift
 //  KeyFolder
 //
-//  Created by Tatsuya Tobioka on 2023/08/16.
+//  Created by Tatsuya Tobioka on 2023/08/18.
 //
 
 import SwiftUI
 
-struct SetPasscodePage: View {
+struct ChangePasscodePage: View {
   @Binding var isShowing: Bool
 
   @State private var passcode = ""
@@ -20,8 +20,16 @@ struct SetPasscodePage: View {
         onConfirm: onConfirm,
         hasError: false
       )
-      .navigationBarTitle("Set passcode", displayMode: .inline)
+      .navigationBarTitle("Change passcode", displayMode: .inline)
       .navigationBarItems(
+        leading: Button(
+          action: {
+            isShowing = false
+          },
+          label: {
+            Image(systemName: "xmark")
+          }
+        ),
         trailing: Button(
           action: onConfirm,
           label: {
@@ -31,7 +39,7 @@ struct SetPasscodePage: View {
       )
       .alert(isPresented: $isConfirmed) {
         Alert(
-          title: Text("Set passcode"),
+          title: Text("Change passcode"),
           message: Text(
             "The passcode is stored only on the device. It can't be reset if you forget."),
           primaryButton: .destructive(Text("Save")) {
@@ -49,8 +57,8 @@ struct SetPasscodePage: View {
   }
 }
 
-struct SetPasscodePage_Previews: PreviewProvider {
+struct ChangePasscodePage_Previews: PreviewProvider {
   static var previews: some View {
-    SetPasscodePage(isShowing: .constant(true))
+    ChangePasscodePage(isShowing: .constant(true))
   }
 }

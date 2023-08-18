@@ -19,6 +19,12 @@ struct KeyFolderApp: App {
     WindowGroup {
       NavigationView {
         FolderListView(isLocked: $isLocked)
+        VStack(alignment: .leading) {
+          Text("No item selected.")
+            .font(.title2)
+            .foregroundColor(.secondary)
+          Spacer()
+        }
       }
       .onChange(of: scenePhase) { phase in
         isLocked = true

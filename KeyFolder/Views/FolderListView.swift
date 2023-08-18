@@ -53,6 +53,7 @@ struct FolderListView: View {
           Image(systemName: "gearshape")
         }
       )
+      .padding(.leading, 6)
       .actionSheet(isPresented: $isShowingMenu) {
         ActionSheet(
           title: Text("Menu"),

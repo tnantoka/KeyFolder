@@ -11,25 +11,38 @@ class Store: ObservableObject {
   @Published var folders = [Folder]()
   @Published var entries = [Entry]()
 
+  private let isExamplesCreatedKey = "isExamplesCreatedKey"
+  private var isExamplesCreated: Bool {
+    get {
+      UserDefaults.standard.bool(forKey: isExamplesCreatedKey)
+    }
+    set(newValue) {
+      UserDefaults.standard.set(newValue, forKey: isExamplesCreatedKey)
+    }
+  }
+
   init() {
-    if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-      .first
-    {
-      let foldersURL = documentsURL.appendingPathComponent("folders")
-      if !FileManager.default.fileExists(atPath: foldersURL.path) {
-        let exampleURL = foldersURL.appendingPathComponent("example")
-        try? FileManager.default.createDirectory(at: exampleURL, withIntermediateDirectories: true)
-        [
-          Bundle.main.url(forResource: "city", withExtension: "jpg"),
-          Bundle.main.url(forResource: "sky", withExtension: "mp4"),
-          Bundle.main.url(forResource: "example", withExtension: "pdf"),
-          Bundle.main.url(forResource: "example", withExtension: "txt"),
-        ].forEach { url in
-          if let url = url {
-            try? FileManager.default.copyItem(
-              at: url, to: exampleURL.appendingPathComponent(url.lastPathComponent))
-          }
-        }
+    if isExamplesCreated {
+      return
+    }
+
+    guard
+      let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        .first
+    else { return }
+
+    let foldersURL = documentsURL.appendingPathComponent("folders")
+    let exampleURL = foldersURL.appendingPathComponent("example")
+    try? FileManager.default.createDirectory(at: exampleURL, withIntermediateDirectories: true)
+    [
+      Bundle.main.url(forResource: "city", withExtension: "jpg"),
+      Bundle.main.url(forResource: "sky", withExtension: "mp4"),
+      Bundle.main.url(forResource: "example", withExtension: "pdf"),
+      Bundle.main.url(forResource: "example", withExtension: "txt"),
+    ].forEach { url in
+      if let url = url {
+        try? FileManager.default.copyItem(
+          at: url, to: exampleURL.appendingPathComponent(url.lastPathComponent))
       }
     }
 
@@ -37,6 +50,8 @@ class Store: ObservableObject {
     entries = folders.flatMap({ folder in
       Entry.all(for: folder)
     })
+
+    isExamplesCreated = true
   }
 
   func select(folder: Folder, isSelected: Bool) {

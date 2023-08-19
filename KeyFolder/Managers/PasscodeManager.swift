@@ -7,21 +7,23 @@
 
 import CryptoKit
 import Foundation
+import KeychainSwift
 
 class PasscodeManager {
   let passcodeKey = "passcodeKey"
   let salt = Constants.passcodeSalt
+  let keychain = KeychainSwift()
 
   var isConfigured: Bool {
     !hashedPasscode.isEmpty
   }
 
   var hashedPasscode: String {
-    UserDefaults.standard.string(forKey: passcodeKey) ?? ""
+    keychain.get(passcodeKey) ?? ""
   }
 
   func change(passcode: String) {
-    UserDefaults.standard.set(hash(passcode: passcode), forKey: passcodeKey)
+    keychain.set(hash(passcode: passcode), forKey: passcodeKey)
   }
 
   func compare(passcode: String) -> Bool {

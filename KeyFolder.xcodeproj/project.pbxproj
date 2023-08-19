@@ -38,6 +38,7 @@
 		9B8C35EA2A8D108D00B32879 /* PasscodeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35E92A8D108D00B32879 /* PasscodeForm.swift */; };
 		9B8C35EC2A8F5BE900B32879 /* UnlockPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35EB2A8F5BE900B32879 /* UnlockPage.swift */; };
 		9B8C35EE2A8F62A800B32879 /* ChangePasscodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35ED2A8F62A800B32879 /* ChangePasscodePage.swift */; };
+		9B8C35F12A905B3600B32879 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8C35F02A905B3600B32879 /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8C35F12A905B3600B32879 /* KeychainSwift in Frameworks */,
 				9B8C35DF2A8BAFC000B32879 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +221,7 @@
 			name = KeyFolder;
 			packageProductDependencies = (
 				9B8C35DE2A8BAFC000B32879 /* GoogleMobileAds */,
+				9B8C35F02A905B3600B32879 /* KeychainSwift */,
 			);
 			productName = KeyFolder;
 			productReference = 9B8C358A2A8B9A0D00B32879 /* KeyFolder.app */;
@@ -251,6 +254,7 @@
 			mainGroup = 9B8C35812A8B9A0D00B32879;
 			packageReferences = (
 				9B8C35DD2A8BAFC000B32879 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				9B8C35EF2A905B3600B32879 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 9B8C358B2A8B9A0D00B32879 /* Products */;
 			projectDirPath = "";
@@ -541,6 +545,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		9B8C35EF2A905B3600B32879 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -548,6 +560,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B8C35DD2A8BAFC000B32879 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		9B8C35F02A905B3600B32879 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B8C35EF2A905B3600B32879 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

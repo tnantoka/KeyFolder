@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct KeyFolderApp: App {
-  @Environment(\.scenePhase) private var scenePhase
-
   @State private var isLocked = true
 
   let store = Store()
@@ -26,8 +24,12 @@ struct KeyFolderApp: App {
           Spacer()
         }
       }
-      .onChange(of: scenePhase) { phase in
-        isLocked = true
+      .onReceive(
+        NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
+      ) { _ in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+          isLocked = true
+        }
       }
       .fullScreenCover(isPresented: $isLocked) {
         if PasscodeManager().isConfigured {

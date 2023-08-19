@@ -22,19 +22,10 @@ struct QuickLookView: UIViewControllerRepresentable {
       entries.firstIndex(where: { entry in
         entry.id == initialEntryId
       }) ?? 0
-    context.coordinator.controller = controller
 
     controller.navigationItem.leftBarButtonItem = UIBarButtonItem(
       barButtonSystemItem: .done, target: context.coordinator,
       action: #selector(context.coordinator.dismiss)
-    )
-
-    // NOTE: For when the app becomes inactive during the preview
-    NotificationCenter.default.addObserver(
-      controller,
-      selector: #selector(controller.reloadData),
-      name: UIApplication.didEnterBackgroundNotification,
-      object: nil
     )
 
     let navigationController = UINavigationController(rootViewController: controller)
@@ -51,7 +42,6 @@ struct QuickLookView: UIViewControllerRepresentable {
   class Coordinator: NSObject, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
 
     let parent: QuickLookView
-    var controller: QLPreviewController?
 
     init(parent: QuickLookView) {
       self.parent = parent
@@ -60,17 +50,13 @@ struct QuickLookView: UIViewControllerRepresentable {
     func numberOfPreviewItems(
       in controller: QLPreviewController
     ) -> Int {
-      return parent.isPresented ? parent.entries.count : 1
+      return parent.entries.count
     }
 
     func previewController(
       _ controller: QLPreviewController, previewItemAt index: Int
     ) -> QLPreviewItem {
-      if parent.isPresented {
-        return parent.entries[index].url() as NSURL
-      } else {
-        return Bundle.main.url(forResource: "blank", withExtension: "png")! as NSURL
-      }
+      return parent.entries[index].url() as NSURL
     }
 
     func previewController(
@@ -81,7 +67,6 @@ struct QuickLookView: UIViewControllerRepresentable {
 
     @objc func dismiss() {
       parent.isPresented = false
-      controller?.reloadData()  // NOTE: For when dismissed in the app
     }
   }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FolderListView: View {
-  @Environment(\.scenePhase) private var scenePhase
   @EnvironmentObject private var store: Store
   @State private var isShowingMenu = false
   @State private var isShowingLicenses = false
@@ -118,7 +117,9 @@ struct FolderListView: View {
     .sheet(isPresented: $isShowingLicenses) {
       LicensesView(isShowing: $isShowingLicenses)
     }
-    .onChange(of: scenePhase) { phase in
+    .onReceive(
+      NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
+    ) { _ in
       isShowingMenu = false
       isShowingLicenses = false
       isChangingPasscode = false

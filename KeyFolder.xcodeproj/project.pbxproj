@@ -10,7 +10,6 @@
 		9B8C358E2A8B9A0D00B32879 /* KeyFolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C358D2A8B9A0D00B32879 /* KeyFolderApp.swift */; };
 		9B8C35922A8B9A0E00B32879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C35912A8B9A0E00B32879 /* Assets.xcassets */; };
 		9B8C35952A8B9A0E00B32879 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C35942A8B9A0E00B32879 /* Preview Assets.xcassets */; };
-		9B8C35A12A8BA78F00B32879 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C359C2A8BA78F00B32879 /* blank.png */; };
 		9B8C35A22A8BA78F00B32879 /* city.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C359D2A8BA78F00B32879 /* city.jpg */; };
 		9B8C35A32A8BA78F00B32879 /* sky.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C359E2A8BA78F00B32879 /* sky.mp4 */; };
 		9B8C35A42A8BA78F00B32879 /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B8C359F2A8BA78F00B32879 /* example.txt */; };
@@ -46,7 +45,6 @@
 		9B8C358D2A8B9A0D00B32879 /* KeyFolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFolderApp.swift; sourceTree = "<group>"; };
 		9B8C35912A8B9A0E00B32879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B8C35942A8B9A0E00B32879 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9B8C359C2A8BA78F00B32879 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
 		9B8C359D2A8BA78F00B32879 /* city.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = city.jpg; sourceTree = "<group>"; };
 		9B8C359E2A8BA78F00B32879 /* sky.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sky.mp4; sourceTree = "<group>"; };
 		9B8C359F2A8BA78F00B32879 /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 		9B8C359B2A8BA78F00B32879 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9B8C359C2A8BA78F00B32879 /* blank.png */,
 				9B8C359D2A8BA78F00B32879 /* city.jpg */,
 				9B8C359E2A8BA78F00B32879 /* sky.mp4 */,
 				9B8C359F2A8BA78F00B32879 /* example.txt */,
@@ -278,7 +275,6 @@
 				9B8C35D82A8BAA4F00B32879 /* Localizable.strings in Resources */,
 				9B8C35922A8B9A0E00B32879 /* Assets.xcassets in Resources */,
 				9B8C35D42A8BAA4600B32879 /* InfoPlist.strings in Resources */,
-				9B8C35A12A8BA78F00B32879 /* blank.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

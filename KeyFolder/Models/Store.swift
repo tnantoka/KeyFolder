@@ -22,27 +22,25 @@ class Store: ObservableObject {
   }
 
   init() {
-    if isExamplesCreated {
-      return
-    }
-
     guard
       let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         .first
     else { return }
 
-    let foldersURL = documentsURL.appendingPathComponent("folders")
-    let exampleURL = foldersURL.appendingPathComponent("example")
-    try? FileManager.default.createDirectory(at: exampleURL, withIntermediateDirectories: true)
-    [
-      Bundle.main.url(forResource: "city", withExtension: "jpg"),
-      Bundle.main.url(forResource: "sky", withExtension: "mp4"),
-      Bundle.main.url(forResource: "example", withExtension: "pdf"),
-      Bundle.main.url(forResource: "example", withExtension: "txt"),
-    ].forEach { url in
-      if let url = url {
-        try? FileManager.default.copyItem(
-          at: url, to: exampleURL.appendingPathComponent(url.lastPathComponent))
+    if !isExamplesCreated {
+      let foldersURL = documentsURL.appendingPathComponent("folders")
+      let exampleURL = foldersURL.appendingPathComponent("example")
+      try? FileManager.default.createDirectory(at: exampleURL, withIntermediateDirectories: true)
+      [
+        Bundle.main.url(forResource: "city", withExtension: "jpg"),
+        Bundle.main.url(forResource: "sky", withExtension: "mp4"),
+        Bundle.main.url(forResource: "example", withExtension: "pdf"),
+        Bundle.main.url(forResource: "example", withExtension: "txt"),
+      ].forEach { url in
+        if let url = url {
+          try? FileManager.default.copyItem(
+            at: url, to: exampleURL.appendingPathComponent(url.lastPathComponent))
+        }
       }
     }
 

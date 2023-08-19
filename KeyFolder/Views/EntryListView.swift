@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EntryListView: View {
-  @Environment(\.scenePhase) private var scenePhase
   @EnvironmentObject private var store: Store
   @State private var previwingId = ""
   @State private var isPreviwing = false
@@ -134,7 +133,9 @@ struct EntryListView: View {
           }
         }, secondaryButton: .cancel(Text("Cancel")))
     }
-    .onChange(of: scenePhase) { phase in
+    .onReceive(
+      NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
+    ) { _ in
       previwingId = ""
       isPreviwing = false
       isEditing = false

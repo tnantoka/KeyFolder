@@ -10,12 +10,19 @@ import Foundation
 import KeychainSwift
 
 class PasscodeManager {
-  let passcodeKey = "passcodeKey"
-  let salt = Constants.passcodeSalt
-  let keychain = KeychainSwift()
+  private let passcodeKey = "passcodeKey"
+  private let isConfiguredKey = "isConfiguredKey"
+
+  private let salt = Constants.passcodeSalt
+  private let keychain = KeychainSwift()
 
   var isConfigured: Bool {
-    !hashedPasscode.isEmpty
+    get {
+      UserDefaults.standard.bool(forKey: isConfiguredKey)
+    }
+    set(newValue) {
+      UserDefaults.standard.set(newValue, forKey: isConfiguredKey)
+    }
   }
 
   var hashedPasscode: String {

@@ -18,7 +18,7 @@ struct KeyFolderApp: App {
       NavigationView {
         FolderListView(isLocked: $isLocked)
         VStack(alignment: .leading) {
-          Text("No item selected.")
+          Text("No folder selected.")
             .font(.title2)
             .foregroundColor(.secondary)
           Spacer()

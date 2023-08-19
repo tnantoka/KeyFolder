@@ -6,32 +6,24 @@
   
 */
 
-"Passcode" = "Passcode";
-"Unlock" = "Unlock";
-"Change passcode" = "Change passcode";
-"Set passcode" = "Set passcode";
-
-"Folders" = "Folders";
 "Acknowledgements" = "Acknowledgements";
-"Cancel" = "Cancel";
-
-"Delete" = "Delete";
 "Are you sure?" = "Are you sure?";
-
-"Menu" = "Menu";
-
-"New folder" = "New folder";
-"Edit folder" = "Edit folder";
-"Name" = "Name";
-
-"Entries" = "Entries";
+"Cancel" = "Cancel";
+"Change passcode" = "Change passcode";
+"Delete" = "Delete";
 "Edit entry" = "Edit entry";
+"Edit folder" = "Edit folder";
+"Entries" = "Entries";
 "Folder" = "Folder";
-
-"From photo library" = "From photo library";
+"Folders" = "Folders";
 "From files" = "From files";
-
+"From photo library" = "From photo library";
+"Menu" = "Menu";
+"Name" = "Name";
+"New folder" = "New folder";
+"No folder selected." = "No folder selected.";
+"Passcode" = "Passcode";
 "Save" = "Save";
+"Set passcode" = "Set passcode";
 "The passcode is stored only on the device. It can't be reset if you forget." = "The passcode is stored only on the device. It can't be reset if you forget.";
-
-"No item selected." = "No item selected.";
+"Unlock" = "Unlock";

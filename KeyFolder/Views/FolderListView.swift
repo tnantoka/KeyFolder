@@ -9,12 +9,14 @@ import SwiftUI
 
 struct FolderListView: View {
   @EnvironmentObject private var store: Store
+
   @State private var isShowingMenu = false
   @State private var isShowingLicenses = false
   @State private var isChangingPasscode = false
   @State private var isCreating = false
   @State private var isEditing = false
   @State private var isDeleting = false
+
   @Binding var isLocked: Bool
 
   var body: some View {
@@ -108,8 +110,8 @@ struct FolderListView: View {
     }
     .sheet(isPresented: $isEditing) {
       UpdateFolderPage(
-        name: store.folders.first { folder in folder.isSelected }?.name ?? "",
-        isShowing: $isEditing
+        isShowing: $isEditing,
+        name: store.folders.first { folder in folder.isSelected }?.name ?? ""
       )
     }
     .sheet(isPresented: $isChangingPasscode) {

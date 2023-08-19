@@ -100,7 +100,10 @@ struct EntryListView: View {
     .sheet(isPresented: $isEditing) {
       let entry = entries.first { entry in entry.isSelected }
       EntryFormView(
-        name: entry?.name ?? "", folderId: entry?.folder.id ?? "", isShowing: $isEditing)
+        isShowing: $isEditing,
+        name: entry?.name ?? "",
+        folderId: entry?.folder.id ?? ""
+      )
     }
     .sheet(isPresented: $isPickingPhotos) {
       ImagePickerView(

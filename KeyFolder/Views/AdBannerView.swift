@@ -9,7 +9,7 @@ import GoogleMobileAds
 import SwiftUI
 
 struct AdBannerView: View {
-  @State var onReady = false
+  @State private var onReady = false
 
   var body: some View {
     let height = [50, 100].randomElement() ?? 50

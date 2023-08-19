@@ -12,10 +12,9 @@ import GoogleMobileAds
 class AdManager {
   static let shared = AdManager()
 
-  var isStarted = false
+  private var isStarted = false
 
-  private init() {
-  }
+  private init() {}
 
   func start(callback: @escaping () -> Void) {
     if isStarted {

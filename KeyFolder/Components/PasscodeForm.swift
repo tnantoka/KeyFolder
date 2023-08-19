@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct PasscodeForm: View {
-  let maxButtonSize = 100.0
-  let spacing = 24.0
-  let buttonPadding = 8.0
+  private let maxButtonSize = 100.0
+  private let spacing = 24.0
+  private let buttonPadding = 8.0
 
   @Binding var passcode: String
 
-  @State var isMasked = true
+  @State private var isMasked = true
 
   let onConfirm: () -> Void
   let hasError: Bool

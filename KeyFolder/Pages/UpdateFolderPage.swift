@@ -10,8 +10,9 @@ import SwiftUI
 struct UpdateFolderPage: View {
   @EnvironmentObject private var store: Store
 
-  @State var name = ""
   @Binding var isShowing: Bool
+
+  @State var name = ""
 
   var body: some View {
     NavigationView {

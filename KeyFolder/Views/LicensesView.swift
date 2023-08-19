@@ -18,7 +18,6 @@ private let sites = [
 
 struct LicensesView: View {
   @Binding var isShowing: Bool
-  @State var url = URL(string: sites[0]["url"] ?? "")!
 
   var body: some View {
     NavigationView {

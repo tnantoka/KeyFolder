@@ -25,7 +25,7 @@ class PasscodeManager {
     }
   }
 
-  var hashedPasscode: String {
+  private var hashedPasscode: String {
     keychain.get(passcodeKey) ?? ""
   }
 

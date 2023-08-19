@@ -10,10 +10,11 @@ import SwiftUI
 struct EntryFormView: View {
   @EnvironmentObject private var store: Store
 
+  @Binding var isShowing: Bool
+
   @State var name = ""
   @State var folderId = ""
   @FocusState private var isFocused
-  @Binding var isShowing: Bool
 
   var body: some View {
     NavigationView {

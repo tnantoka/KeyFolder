@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct FolderForm: View {
-  @FocusState private var isFocused
   @Binding var name: String
+
+  @FocusState private var isFocused
 
   var body: some View {
     Form {

@@ -106,7 +106,7 @@ class Store: ObservableObject {
     entries.append(Entry(name: name, folder: folder))
   }
 
-  func addFolder(name: String) {
+  func createFolder(name: String) {
     folders.append(Folder.create(name: name))
   }
 

@@ -19,7 +19,6 @@
 		9B8C35B02A8BA79B00B32879 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35AA2A8BA79B00B32879 /* Entry.swift */; };
 		9B8C35B12A8BA79B00B32879 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35AB2A8BA79B00B32879 /* Store.swift */; };
 		9B8C35B22A8BA79B00B32879 /* PasscodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35AC2A8BA79B00B32879 /* PasscodeManager.swift */; };
-		9B8C35C32A8BA7A100B32879 /* FolderFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */; };
 		9B8C35C42A8BA7A100B32879 /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */; };
 		9B8C35C72A8BA7A100B32879 /* EntryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35B92A8BA7A100B32879 /* EntryFormView.swift */; };
 		9B8C35C82A8BA7A100B32879 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35BA2A8BA7A100B32879 /* ImagePickerView.swift */; };
@@ -38,6 +37,9 @@
 		9B8C35EC2A8F5BE900B32879 /* UnlockPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35EB2A8F5BE900B32879 /* UnlockPage.swift */; };
 		9B8C35EE2A8F62A800B32879 /* ChangePasscodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35ED2A8F62A800B32879 /* ChangePasscodePage.swift */; };
 		9B8C35F12A905B3600B32879 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8C35F02A905B3600B32879 /* KeychainSwift */; };
+		9B8C35F72A90E86800B32879 /* CreateFolderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35F62A90E86800B32879 /* CreateFolderPage.swift */; };
+		9B8C35F92A90E89200B32879 /* FolderForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35F82A90E89200B32879 /* FolderForm.swift */; };
+		9B8C35FB2A90E9E300B32879 /* UpdateFolderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35FA2A90E9E300B32879 /* UpdateFolderPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +56,6 @@
 		9B8C35AA2A8BA79B00B32879 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		9B8C35AB2A8BA79B00B32879 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9B8C35AC2A8BA79B00B32879 /* PasscodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeManager.swift; sourceTree = "<group>"; };
-		9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderFormView.swift; sourceTree = "<group>"; };
 		9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		9B8C35B92A8BA7A100B32879 /* EntryFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
 		9B8C35BA2A8BA7A100B32879 /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -74,6 +75,9 @@
 		9B8C35E92A8D108D00B32879 /* PasscodeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeForm.swift; sourceTree = "<group>"; };
 		9B8C35EB2A8F5BE900B32879 /* UnlockPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockPage.swift; sourceTree = "<group>"; };
 		9B8C35ED2A8F62A800B32879 /* ChangePasscodePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasscodePage.swift; sourceTree = "<group>"; };
+		9B8C35F62A90E86800B32879 /* CreateFolderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderPage.swift; sourceTree = "<group>"; };
+		9B8C35F82A90E89200B32879 /* FolderForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderForm.swift; sourceTree = "<group>"; };
+		9B8C35FA2A90E9E300B32879 /* UpdateFolderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFolderPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +163,6 @@
 		9B8C35B32A8BA7A100B32879 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9B8C35B52A8BA7A100B32879 /* FolderFormView.swift */,
 				9B8C35B62A8BA7A100B32879 /* AdBannerView.swift */,
 				9B8C35B92A8BA7A100B32879 /* EntryFormView.swift */,
 				9B8C35BA2A8BA7A100B32879 /* ImagePickerView.swift */,
@@ -188,6 +191,8 @@
 				9B8C35E72A8D106C00B32879 /* SetPasscodePage.swift */,
 				9B8C35ED2A8F62A800B32879 /* ChangePasscodePage.swift */,
 				9B8C35EB2A8F5BE900B32879 /* UnlockPage.swift */,
+				9B8C35F62A90E86800B32879 /* CreateFolderPage.swift */,
+				9B8C35FA2A90E9E300B32879 /* UpdateFolderPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8C35E92A8D108D00B32879 /* PasscodeForm.swift */,
+				9B8C35F82A90E89200B32879 /* FolderForm.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -290,7 +296,6 @@
 				9B8C35EA2A8D108D00B32879 /* PasscodeForm.swift in Sources */,
 				9B8C35CB2A8BA7A100B32879 /* WebView.swift in Sources */,
 				9B8C35B02A8BA79B00B32879 /* Entry.swift in Sources */,
-				9B8C35C32A8BA7A100B32879 /* FolderFormView.swift in Sources */,
 				9B8C35EC2A8F5BE900B32879 /* UnlockPage.swift in Sources */,
 				9B8C35CD2A8BA7A100B32879 /* EntryListView.swift in Sources */,
 				9B8C358E2A8B9A0D00B32879 /* KeyFolderApp.swift in Sources */,
@@ -298,14 +303,17 @@
 				9B8C35B22A8BA79B00B32879 /* PasscodeManager.swift in Sources */,
 				9B8C35CA2A8BA7A100B32879 /* LicensesView.swift in Sources */,
 				9B8C35EE2A8F62A800B32879 /* ChangePasscodePage.swift in Sources */,
+				9B8C35FB2A90E9E300B32879 /* UpdateFolderPage.swift in Sources */,
 				9B8C35C92A8BA7A100B32879 /* FolderListView.swift in Sources */,
 				9B8C35CF2A8BA7A100B32879 /* QuickLookView.swift in Sources */,
 				9B8C35AD2A8BA79B00B32879 /* Constants.swift in Sources */,
 				9B8C35C72A8BA7A100B32879 /* EntryFormView.swift in Sources */,
 				9B8C35C82A8BA7A100B32879 /* ImagePickerView.swift in Sources */,
+				9B8C35F72A90E86800B32879 /* CreateFolderPage.swift in Sources */,
 				9B8C35C42A8BA7A100B32879 /* AdBannerView.swift in Sources */,
 				9B8C35E22A8BB64700B32879 /* AdManager.swift in Sources */,
 				9B8C35AF2A8BA79B00B32879 /* Folder.swift in Sources */,
+				9B8C35F92A90E89200B32879 /* FolderForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

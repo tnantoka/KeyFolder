@@ -104,12 +104,13 @@ struct FolderListView: View {
         }, secondaryButton: .cancel(Text("Cancel")))
     }
     .sheet(isPresented: $isCreating) {
-      FolderFormView(mode: .new, name: "", isShowing: $isCreating)
+      CreateFolderPage(isShowing: $isCreating)
     }
     .sheet(isPresented: $isEditing) {
-      FolderFormView(
-        mode: .edit, name: store.folders.first { folder in folder.isSelected }?.name ?? "",
-        isShowing: $isEditing)
+      UpdateFolderPage(
+        name: store.folders.first { folder in folder.isSelected }?.name ?? "",
+        isShowing: $isEditing
+      )
     }
     .sheet(isPresented: $isChangingPasscode) {
       ChangePasscodePage(isShowing: $isChangingPasscode)

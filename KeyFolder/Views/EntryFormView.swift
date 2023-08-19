@@ -50,7 +50,15 @@ struct EntryFormView: View {
           label: {
             Image(systemName: "checkmark")
           }
-        ).disabled(name.isEmpty)
+        )
+        .disabled(
+          name.isEmpty
+            || store.entries
+              .filter { entry in
+                entry.folder.id == folderId
+              }
+              .contains { $0.name == name }
+        )
       )
       .onAppear {
         isFocused = true

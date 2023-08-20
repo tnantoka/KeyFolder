@@ -41,7 +41,7 @@ struct ChangePasscodePage: View {
         Alert(
           title: Text("Change passcode"),
           message: Text(
-            "The passcode is stored only on the device. It can't be reset if you forget."),
+            "The passcode is stored only on the device. It can't be recovered if you forget."),
           primaryButton: .destructive(Text("Save")) {
             PasscodeManager().change(passcode: passcode)
             isShowing = false

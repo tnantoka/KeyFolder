@@ -33,7 +33,7 @@ struct SetPasscodePage: View {
         Alert(
           title: Text("Set passcode"),
           message: Text(
-            "The passcode is stored only on the device. It can't be reset if you forget."),
+            "The passcode is stored only on the device. It can't be recovered if you forget."),
           primaryButton: .destructive(Text("Save")) {
             let manager = PasscodeManager()
             manager.change(passcode: passcode)

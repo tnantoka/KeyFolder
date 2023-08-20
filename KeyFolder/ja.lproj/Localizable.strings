@@ -25,5 +25,5 @@
 "Passcode" = "パスコード";
 "Save" = "保存";
 "Set passcode" = "パスコード設定";
-"The passcode is stored only on the device. It can't be reset if you forget." = "パスコードは端末内にのみ保存されます。忘れたらリセットできません。";
+"The passcode is stored only on the device. It can't be recovered if you forget." = "パスコードは端末内にのみ保存されます。忘れたら復元できません。";
 "Unlock" = "ロック解除";

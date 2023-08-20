@@ -44,9 +44,9 @@ class Store: ObservableObject {
       }
     }
 
-    folders = Folder.all()
+    folders = FolderManager().listAll()
     entries = folders.flatMap({ folder in
-      Entry.all(for: folder)
+      EntryManager().all(for: folder)
     })
 
     isExamplesCreated = true
@@ -107,7 +107,7 @@ class Store: ObservableObject {
   }
 
   func createFolder(name: String) {
-    folders.append(Folder.create(name: name))
+    folders.append(FolderManager().create(name: name))
   }
 
   func updateFolder(name: String) {

@@ -8,7 +8,7 @@
 import GoogleMobileAds
 import SwiftUI
 
-struct AdBannerView: View {
+struct AdBanner: View {
   @State private var onReady = false
 
   var body: some View {
@@ -67,8 +67,8 @@ struct AdBannerViewWithController: UIViewControllerRepresentable {
   }
 }
 
-struct AdBannerView_Previews: PreviewProvider {
+struct AdBanner_Previews: PreviewProvider {
   static var previews: some View {
-    AdBannerView()
+    AdBanner()
   }
 }

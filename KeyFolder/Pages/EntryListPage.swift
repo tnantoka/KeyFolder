@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EntryListView: View {
+struct EntryListPage: View {
   @EnvironmentObject private var store: Store
   @State private var previwingId = ""
   @State private var isPreviwing = false
@@ -47,7 +47,7 @@ struct EntryListView: View {
         }
       }
       .listStyle(PlainListStyle())
-      AdBannerView()
+      AdBanner()
     }
     .navigationBarTitle("Entries", displayMode: .inline)
     .navigationBarItems(
@@ -95,18 +95,18 @@ struct EntryListView: View {
       }
     )
     .fullScreenCover(isPresented: $isPreviwing) {
-      QuickLookView(entries: entries, isPresented: $isPreviwing, initialEntryId: $previwingId)
+      QuickLook(entries: entries, isPresented: $isPreviwing, initialEntryId: $previwingId)
     }
     .sheet(isPresented: $isEditing) {
       let entry = entries.first { entry in entry.isSelected }
-      EntryFormView(
+      EntryForm(
         isShowing: $isEditing,
         name: entry?.name ?? "",
         folderId: entry?.folder.id ?? ""
       )
     }
     .sheet(isPresented: $isPickingPhotos) {
-      ImagePickerView(
+      ImagePicker(
         isPresented: $isPickingPhotos,
         onPickImage: {
           image
@@ -118,7 +118,7 @@ struct EntryListView: View {
         })
     }
     .sheet(isPresented: $isPickingFiles) {
-      DocumentPickerView(
+      DocumentPicker(
         onPickImage: { url in
           store.addEntry(folder: folder, imageURL: url)
         },
@@ -151,10 +151,10 @@ struct EntryListView: View {
   }
 }
 
-struct EntryListView_Previews: PreviewProvider {
+struct EntryListPage_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      EntryListView(isLocked: .constant(false), folder: Folder(name: "example"))
+      EntryListPage(isLocked: .constant(false), folder: Folder(name: "example"))
     }
   }
 }

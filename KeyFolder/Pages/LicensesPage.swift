@@ -16,7 +16,7 @@ private let sites = [
   ],
 ]
 
-struct LicensesView: View {
+struct LicensesPage: View {
   @Binding var isShowing: Bool
 
   var body: some View {
@@ -46,8 +46,8 @@ struct LicensesView: View {
   }
 }
 
-struct LicensesView_Previews: PreviewProvider {
+struct LicensesPage_Previews: PreviewProvider {
   static var previews: some View {
-    LicensesView(isShowing: .constant(false))
+    LicensesPage(isShowing: .constant(false))
   }
 }

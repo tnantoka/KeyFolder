@@ -8,7 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct DocumentPickerView: UIViewControllerRepresentable {
+struct DocumentPicker: UIViewControllerRepresentable {
 
   let onPickImage: (URL) -> Void
   let onPickMovie: (URL) -> Void
@@ -33,9 +33,9 @@ struct DocumentPickerView: UIViewControllerRepresentable {
   }
 
   class Coordinator: NSObject, UIDocumentPickerDelegate {
-    let parent: DocumentPickerView
+    let parent: DocumentPicker
 
-    init(parent: DocumentPickerView) {
+    init(parent: DocumentPicker) {
       self.parent = parent
     }
 
@@ -57,8 +57,8 @@ struct DocumentPickerView: UIViewControllerRepresentable {
   }
 }
 
-struct DocumentPickerView_Previews: PreviewProvider {
+struct DocumentPicker_Previews: PreviewProvider {
   static var previews: some View {
-    DocumentPickerView(onPickImage: { _ in }, onPickMovie: { _ in })
+    DocumentPicker(onPickImage: { _ in }, onPickMovie: { _ in })
   }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FolderListView: View {
+struct FolderListPage: View {
   @EnvironmentObject private var store: Store
 
   @State private var isShowingMenu = false
@@ -23,7 +23,7 @@ struct FolderListView: View {
     VStack {
       List(store.folders.sorted { $0.name < $1.name }, id: \.id) { folder in
         NavigationLink {
-          EntryListView(isLocked: $isLocked, folder: folder)
+          EntryListPage(isLocked: $isLocked, folder: folder)
         } label: {
           HStack {
             Button {
@@ -42,7 +42,7 @@ struct FolderListView: View {
         }
       }
       .listStyle(PlainListStyle())
-      AdBannerView()
+      AdBanner()
     }
     .navigationBarTitle("Folders", displayMode: .inline)
     .navigationBarItems(
@@ -118,7 +118,7 @@ struct FolderListView: View {
       ChangePasscodePage(isShowing: $isChangingPasscode)
     }
     .sheet(isPresented: $isShowingLicenses) {
-      LicensesView(isShowing: $isShowingLicenses)
+      LicensesPage(isShowing: $isShowingLicenses)
     }
     .onReceive(
       NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
@@ -137,7 +137,7 @@ struct FolderListView: View {
 struct FolderListView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      FolderListView(isLocked: .constant(false))
+      FolderListPage(isLocked: .constant(false))
     }
   }
 }

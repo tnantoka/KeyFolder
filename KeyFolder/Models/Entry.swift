@@ -9,8 +9,6 @@ import Foundation
 import UniformTypeIdentifiers
 
 struct Entry {
-  static let ignoredNames = [".DS_Store"]
-
   let id: String
   let name: String
   let folder: Folder
@@ -58,19 +56,5 @@ struct Entry {
     let entry = Entry(id: id, name: name, folder: folder, isSelected: isSelected)
     try? FileManager.default.moveItem(at: url(), to: entry.url())
     return entry
-  }
-
-  static func all(for folder: Folder) -> [Entry] {
-    let folderURL = folder.url()
-    if FileManager.default.fileExists(atPath: folderURL.path) {
-      do {
-        return try FileManager.default.contentsOfDirectory(atPath: folderURL.path).map { name in
-          Entry(name: name, folder: folder)
-        }.filter { !ignoredNames.contains($0.name) }
-      } catch {
-        return []
-      }
-    }
-    return []
   }
 }

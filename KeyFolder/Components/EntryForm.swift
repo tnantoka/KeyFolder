@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EntryFormView: View {
+struct EntryForm: View {
   @EnvironmentObject private var store: Store
 
   @Binding var isShowing: Bool
@@ -68,8 +68,8 @@ struct EntryFormView: View {
   }
 }
 
-struct EntryFormView_Previews: PreviewProvider {
+struct EntryForm_Previews: PreviewProvider {
   static var previews: some View {
-    EntryFormView(isShowing: .constant(false))
+    EntryForm(isShowing: .constant(false))
   }
 }

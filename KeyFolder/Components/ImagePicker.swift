@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImagePickerView: UIViewControllerRepresentable {
+struct ImagePicker: UIViewControllerRepresentable {
 
   @Binding var isPresented: Bool
 
@@ -33,9 +33,9 @@ struct ImagePickerView: UIViewControllerRepresentable {
   }
 
   class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    let parent: ImagePickerView
+    let parent: ImagePicker
 
-    init(parent: ImagePickerView) {
+    init(parent: ImagePicker) {
       self.parent = parent
     }
 
@@ -53,8 +53,8 @@ struct ImagePickerView: UIViewControllerRepresentable {
   }
 }
 
-struct ImagePickerView_Previews: PreviewProvider {
+struct ImagePicker_Previews: PreviewProvider {
   static var previews: some View {
-    ImagePickerView(isPresented: .constant(false), onPickImage: { _ in }, onPickMovie: { _ in })
+    ImagePicker(isPresented: .constant(false), onPickImage: { _ in }, onPickMovie: { _ in })
   }
 }

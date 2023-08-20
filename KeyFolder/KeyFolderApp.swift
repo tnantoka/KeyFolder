@@ -16,7 +16,7 @@ struct KeyFolderApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-        FolderListView(isLocked: $isLocked)
+        FolderListPage(isLocked: $isLocked)
         VStack(alignment: .leading) {
           Text("No folder selected.")
             .font(.title2)

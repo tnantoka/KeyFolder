@@ -8,7 +8,7 @@
 import QuickLook
 import SwiftUI
 
-struct QuickLookView: UIViewControllerRepresentable {
+struct QuickLook: UIViewControllerRepresentable {
   let entries: [Entry]
 
   @Binding var isPresented: Bool
@@ -41,9 +41,9 @@ struct QuickLookView: UIViewControllerRepresentable {
 
   class Coordinator: NSObject, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
 
-    let parent: QuickLookView
+    let parent: QuickLook
 
-    init(parent: QuickLookView) {
+    init(parent: QuickLook) {
       self.parent = parent
     }
 
@@ -71,8 +71,8 @@ struct QuickLookView: UIViewControllerRepresentable {
   }
 }
 
-struct QuickLookView_Previews: PreviewProvider {
+struct QuickLook_Previews: PreviewProvider {
   static var previews: some View {
-    QuickLookView(entries: [], isPresented: .constant(false), initialEntryId: .constant(""))
+    QuickLook(entries: [], isPresented: .constant(false), initialEntryId: .constant(""))
   }
 }

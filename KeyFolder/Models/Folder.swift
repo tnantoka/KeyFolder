@@ -26,7 +26,7 @@ struct Folder {
     if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
       .first
     {
-      return documentsURL.appendingPathComponent("folders").appendingPathComponent(name)
+      return documentsURL.appendingPathComponent(name)
     }
     return URL(string: "")!
   }

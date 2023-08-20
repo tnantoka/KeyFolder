@@ -28,8 +28,7 @@ class Store: ObservableObject {
     else { return }
 
     if !isExamplesCreated {
-      let foldersURL = documentsURL.appendingPathComponent("folders")
-      let exampleURL = foldersURL.appendingPathComponent("example")
+      let exampleURL = documentsURL.appendingPathComponent("example")
       try? FileManager.default.createDirectory(at: exampleURL, withIntermediateDirectories: true)
       [
         Bundle.main.url(forResource: "city", withExtension: "jpg"),

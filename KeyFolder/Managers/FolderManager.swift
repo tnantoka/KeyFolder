@@ -18,10 +18,10 @@ struct FolderManager {
     if let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
       .first
     {
-      let foldersURL = documentsURL.appendingPathComponent("folders")
-      if FileManager.default.fileExists(atPath: foldersURL.path) {
+      if FileManager.default.fileExists(atPath: documentsURL.path) {
         do {
-          return try FileManager.default.contentsOfDirectory(atPath: foldersURL.path).map { name in
+          return try FileManager.default.contentsOfDirectory(atPath: documentsURL.path).map {
+            name in
             Folder(name: name)
           }
         } catch {

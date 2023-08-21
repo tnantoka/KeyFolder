@@ -26,25 +26,28 @@ struct EntryListPage: View {
     }.sorted { $0.name < $1.name }
     VStack {
       List(entries, id: \.id) { entry in
-        Button {
-          previwingId = entry.id
-          isPreviwing = true
-        } label: {
-          HStack {
-            Button {
-              store.select(entry: entry, isSelected: !entry.isSelected)
-            } label: {
-              if entry.isSelected {
-                Image(systemName: "checkmark.circle")
-              } else {
-                Image(systemName: entry.icon)
+        Button(
+          action: {
+            previwingId = entry.id
+            isPreviwing = true
+          },
+          label: {
+            HStack {
+              Button {
+                store.select(entry: entry, isSelected: !entry.isSelected)
+              } label: {
+                if entry.isSelected {
+                  Image(systemName: "checkmark.circle")
+                } else {
+                  Image(systemName: entry.icon)
+                }
               }
+              .buttonStyle(PlainButtonStyle())
+              .frame(width: 32)
+              Text(entry.name)
             }
-            .buttonStyle(PlainButtonStyle())
-            .frame(width: 32)
-            Text(entry.name)
           }
-        }
+        )
       }
       .listStyle(PlainListStyle())
       AdBanner()
@@ -72,7 +75,8 @@ struct EntryListPage: View {
                   isPickingFiles = true
                 },
                 .cancel(Text("Cancel")),
-              ])
+              ]
+            )
           }
         } else {
           Button(
@@ -115,7 +119,8 @@ struct EntryListPage: View {
         },
         onPickMovie: { url in
           store.addEntry(folder: folder, movieURL: url)
-        })
+        }
+      )
     }
     .sheet(isPresented: $isPickingFiles) {
       DocumentPicker(
@@ -124,7 +129,8 @@ struct EntryListPage: View {
         },
         onPickMovie: { url in
           store.addEntry(folder: folder, movieURL: url)
-        })
+        }
+      )
     }
     .alert(isPresented: $isDeleting) {
       Alert(
@@ -134,7 +140,9 @@ struct EntryListPage: View {
           if let entry = entries.first(where: { entry in entry.isSelected }) {
             store.delete(entry: entry)
           }
-        }, secondaryButton: .cancel(Text("Cancel")))
+        },
+        secondaryButton: .cancel(Text("Cancel"))
+      )
     }
     .onReceive(
       NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
@@ -155,6 +163,7 @@ struct EntryListPage_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
       EntryListPage(isLocked: .constant(false), folder: Folder(name: "example"))
+        .environmentObject(Store())
     }
   }
 }

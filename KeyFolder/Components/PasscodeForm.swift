@@ -10,7 +10,7 @@ import SwiftUI
 struct PasscodeForm: View {
   private let maxButtonSize = 100.0
   private let spacing = 24.0
-  private let buttonPadding = 8.0
+  private let defaultButtonPadding = 8.0
 
   @Binding var passcode: String
 
@@ -38,7 +38,7 @@ struct PasscodeForm: View {
         .foregroundColor(.primary)
       }
       .padding(.bottom, spacing)
-      .frame(maxWidth: maxButtonSize * 3 + spacing * 2 + buttonPadding * 6)
+      .frame(maxWidth: maxButtonSize * 3 + spacing * 2 + defaultButtonPadding * 6)
       HStack(spacing: spacing) {
         numberButtons(range: 1..<4)
       }

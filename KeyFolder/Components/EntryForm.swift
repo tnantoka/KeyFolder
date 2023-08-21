@@ -71,5 +71,6 @@ struct EntryForm: View {
 struct EntryForm_Previews: PreviewProvider {
   static var previews: some View {
     EntryForm(isShowing: .constant(false))
+      .environmentObject(Store())
   }
 }

@@ -10,7 +10,7 @@ import Foundation
 struct EntryManager {
   let ignoredNames = [".DS_Store"]
 
-  func all(for folder: Folder) -> [Entry] {
+  func listAll(for folder: Folder) -> [Entry] {
     let folderURL = folder.url()
     if FileManager.default.fileExists(atPath: folderURL.path) {
       do {

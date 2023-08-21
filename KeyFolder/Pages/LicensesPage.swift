@@ -29,7 +29,8 @@ struct LicensesPage: View {
             },
             label: {
               Text(sites[i]["name"] ?? "")
-            })
+            }
+          )
         }
       }
       .navigationBarTitle("Acknowledgements", displayMode: .inline)
@@ -40,7 +41,8 @@ struct LicensesPage: View {
           },
           label: {
             Image(systemName: "xmark")
-          })
+          }
+        )
       )
     }
   }

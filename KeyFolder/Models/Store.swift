@@ -45,7 +45,7 @@ class Store: ObservableObject {
 
     folders = FolderManager().listAll()
     entries = folders.flatMap({ folder in
-      EntryManager().all(for: folder)
+      EntryManager().listAll(for: folder)
     })
 
     isExamplesCreated = true

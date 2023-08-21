@@ -22,24 +22,27 @@ struct FolderListPage: View {
   var body: some View {
     VStack {
       List(store.folders.sorted { $0.name < $1.name }, id: \.id) { folder in
-        NavigationLink {
-          EntryListPage(isLocked: $isLocked, folder: folder)
-        } label: {
-          HStack {
-            Button {
-              store.select(folder: folder, isSelected: !folder.isSelected)
-            } label: {
-              if folder.isSelected {
-                Image(systemName: "checkmark.circle")
-              } else {
-                Image(systemName: "folder")
+        NavigationLink(
+          destination: {
+            EntryListPage(isLocked: $isLocked, folder: folder)
+          },
+          label: {
+            HStack {
+              Button {
+                store.select(folder: folder, isSelected: !folder.isSelected)
+              } label: {
+                if folder.isSelected {
+                  Image(systemName: "checkmark.circle")
+                } else {
+                  Image(systemName: "folder")
+                }
               }
+              .buttonStyle(PlainButtonStyle())
+              .frame(width: 32)
+              Text(folder.name)
             }
-            .buttonStyle(PlainButtonStyle())
-            .frame(width: 32)
-            Text(folder.name)
           }
-        }
+        )
       }
       .listStyle(PlainListStyle())
       AdBanner()
@@ -76,7 +79,8 @@ struct FolderListPage: View {
             },
             label: {
               Image(systemName: "plus")
-            })
+            }
+          )
         } else {
           Button(
             action: {
@@ -84,14 +88,16 @@ struct FolderListPage: View {
             },
             label: {
               Image(systemName: "pencil")
-            })
+            }
+          )
           Button(
             action: {
               isDeleting = true
             },
             label: {
               Image(systemName: "trash")
-            })
+            }
+          )
         }
       }
     )
@@ -103,7 +109,9 @@ struct FolderListPage: View {
           if let folder = store.folders.first(where: { folder in folder.isSelected }) {
             store.delete(folder: folder)
           }
-        }, secondaryButton: .cancel(Text("Cancel")))
+        },
+        secondaryButton: .cancel(Text("Cancel"))
+      )
     }
     .sheet(isPresented: $isCreating) {
       CreateFolderPage(isShowing: $isCreating)
@@ -138,6 +146,7 @@ struct FolderListView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
       FolderListPage(isLocked: .constant(false))
+        .environmentObject(Store())
     }
   }
 }

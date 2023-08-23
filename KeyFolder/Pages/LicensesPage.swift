@@ -15,6 +15,10 @@ private let sites = [
     "name": "googleads/swift-package-manager-google-mobile-ads",
     "url": "https://github.com/googleads/swift-package-manager-google-mobile-ads",
   ],
+  [
+    "name": "evgenyneu/keychain-swift",
+    "url": "https://github.com/evgenyneu/keychain-swift",
+  ],
 ]
 
 struct LicensesPage: View {

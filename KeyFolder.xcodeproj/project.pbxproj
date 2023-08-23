@@ -42,6 +42,7 @@
 		9B8C35FB2A90E9E300B32879 /* UpdateFolderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35FA2A90E9E300B32879 /* UpdateFolderPage.swift */; };
 		9B8C35FD2A91C84D00B32879 /* FolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35FC2A91C84D00B32879 /* FolderManager.swift */; };
 		9B8C35FF2A91C8C800B32879 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C35FE2A91C8C800B32879 /* EntryManager.swift */; };
+		9BE3735A2A94FBCF008E4438 /* sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BE373592A94FBCF008E4438 /* sunset.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		9B8C35FA2A90E9E300B32879 /* UpdateFolderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFolderPage.swift; sourceTree = "<group>"; };
 		9B8C35FC2A91C84D00B32879 /* FolderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderManager.swift; sourceTree = "<group>"; };
 		9B8C35FE2A91C8C800B32879 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
+		9BE373592A94FBCF008E4438 /* sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunset.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8C359D2A8BA78F00B32879 /* city.jpg */,
+				9BE373592A94FBCF008E4438 /* sunset.jpg */,
 				9B8C359E2A8BA78F00B32879 /* sky.mp4 */,
 				9B8C359F2A8BA78F00B32879 /* example.txt */,
 				9B8C35A02A8BA78F00B32879 /* example.pdf */,
@@ -274,6 +277,7 @@
 				9B8C35A32A8BA78F00B32879 /* sky.mp4 in Resources */,
 				9B8C35A22A8BA78F00B32879 /* city.jpg in Resources */,
 				9B8C35952A8B9A0E00B32879 /* Preview Assets.xcassets in Resources */,
+				9BE3735A2A94FBCF008E4438 /* sunset.jpg in Resources */,
 				9B8C35A42A8BA78F00B32879 /* example.txt in Resources */,
 				9B8C35A52A8BA78F00B32879 /* example.pdf in Resources */,
 				9B8C35D82A8BAA4F00B32879 /* Localizable.strings in Resources */,
@@ -461,12 +465,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KeyFolder/Preview Content\"";
 				DEVELOPMENT_TEAM = H4Z42X3L6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyFolder/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access the photo library for importing image files to folder.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "It will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,12 +499,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KeyFolder/Preview Content\"";
 				DEVELOPMENT_TEAM = H4Z42X3L6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyFolder/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access the photo library for importing image files to folder.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "It will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

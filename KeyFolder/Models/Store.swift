@@ -32,6 +32,7 @@ class Store: ObservableObject {
       try? FileManager.default.createDirectory(at: exampleURL, withIntermediateDirectories: true)
       [
         Bundle.main.url(forResource: "city", withExtension: "jpg"),
+        Bundle.main.url(forResource: "sunset", withExtension: "jpg"),
         Bundle.main.url(forResource: "sky", withExtension: "mp4"),
         Bundle.main.url(forResource: "example", withExtension: "pdf"),
         Bundle.main.url(forResource: "example", withExtension: "txt"),

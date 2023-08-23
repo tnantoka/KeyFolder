@@ -9,6 +9,7 @@ import SwiftUI
 
 private let sites = [
   ["name": "examples/city.jpg", "url": "https://pixabay.com/images/id-6599328/"],
+  ["name": "examples/sunset.jpg", "url": "https://pixabay.com/photos/id-3314275/"],
   ["name": "examples/sky.mp4", "url": "https://pixabay.com/videos/id-80724/"],
   [
     "name": "googleads/swift-package-manager-google-mobile-ads",

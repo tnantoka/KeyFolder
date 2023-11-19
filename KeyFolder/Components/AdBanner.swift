@@ -10,12 +10,15 @@ import SwiftUI
 
 struct AdBanner: View {
   @State private var onReady = false
+  @Binding var isLocked: Bool
 
   var body: some View {
     let height = [50, 100].randomElement() ?? 50
 
     if onReady {
       AdBannerViewWithController(height: height).frame(height: CGFloat(height))
+    } else if isLocked {
+      VStack {}
     } else {
       VStack {}
         .onAppear {
@@ -69,6 +72,6 @@ struct AdBannerViewWithController: UIViewControllerRepresentable {
 
 struct AdBanner_Previews: PreviewProvider {
   static var previews: some View {
-    AdBanner()
+    AdBanner(isLocked: .constant(false))
   }
 }

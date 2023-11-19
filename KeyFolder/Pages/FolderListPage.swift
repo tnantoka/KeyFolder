@@ -45,7 +45,7 @@ struct FolderListPage: View {
         )
       }
       .listStyle(PlainListStyle())
-      AdBanner()
+      AdBanner(isLocked: $isLocked)
     }
     .navigationBarTitle("Folders", displayMode: .inline)
     .navigationBarItems(

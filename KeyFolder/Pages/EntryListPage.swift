@@ -50,7 +50,7 @@ struct EntryListPage: View {
         )
       }
       .listStyle(PlainListStyle())
-      AdBanner()
+      AdBanner(isLocked: $isLocked)
     }
     .navigationBarTitle("Entries", displayMode: .inline)
     .navigationBarItems(

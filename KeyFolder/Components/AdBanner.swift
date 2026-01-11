@@ -36,13 +36,13 @@ struct AdBannerViewWithController: UIViewControllerRepresentable {
   ) -> UIViewController {
     let controller = UIViewController()
 
-    let view = GADBannerView(adSize: height == 50 ? GADAdSizeBanner : GADAdSizeLargeBanner)
+    let view = BannerView(adSize: height == 50 ? AdSizeBanner : AdSizeLargeBanner)
 
     view.adUnitID = Constants.adUnitID
 
     view.rootViewController = controller
     if Constants.isEnabledAd {
-      let request = GADRequest()
+      let request = Request()
       request.scene =
         UIApplication.shared.connectedScenes.first { $0.activationState == .foregroundActive }
         as? UIWindowScene

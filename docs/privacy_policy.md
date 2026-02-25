@@ -1,3 +1,6 @@
+---
+redirect_to: https://tnantoka.com/app_privacy/
+---
 **Privacy Policy**
 
 tnantoka built the KeyFolder app as an Ad Supported app. This SERVICE is provided by tnantoka at no cost and is intended for use as is.
